@@ -26,32 +26,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Usa el secreto que configuraste
         run: mkdocs gh-deploy --force --remote-branch gh-pages --message "Deploying to GitHub Pages"
-name: Deploy MkDocs site
 
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        pip install mkdocs-material
-
-    - name: Deploy to GitHub Pages
-      run: |
-        mkdocs gh-deploy --force
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
