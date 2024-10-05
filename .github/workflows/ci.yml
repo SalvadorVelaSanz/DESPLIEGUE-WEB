@@ -3,6 +3,34 @@ name: Deploy MkDocs site
 on:
   push:
     branches:
+      - main  # Cambia 'main' por el nombre de tu rama principal si es diferente
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs and dependencies
+        run: |
+          pip install mkdocs mkdocs-material
+
+      - name: Build and deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Usa el secreto que configuraste
+        run: mkdocs gh-deploy --force --remote-branch gh-pages --message "Deploying to GitHub Pages"
+name: Deploy MkDocs site
+
+on:
+  push:
+    branches:
       - main
 
 jobs:
