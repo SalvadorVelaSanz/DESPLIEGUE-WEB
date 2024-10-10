@@ -3,5 +3,6 @@ site_url: https://SalvadorVelaSanz.github.io
 theme:
   name: material
 nav:
-  - Home: index.md  # Añade la referencia a tu archivo index.md
+  - Practica2.1: index.md  # Añade la referencia a tu archivo index.md
+  - Practica2.2: Practica2.md
 

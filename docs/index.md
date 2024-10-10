@@ -242,3 +242,7 @@ sudo apt-get update && sudo apt-get install unzip
   Comprueba que el certificado se carga correctamente y que el sitio está utilizando HTTPS.
 
   ![Captura 29](images/29.png)
+
+
+
+
