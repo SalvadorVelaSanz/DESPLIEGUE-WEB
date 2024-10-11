@@ -265,7 +265,7 @@ server {
         auth_basic "Acceso restringido a Proyectos";  
         auth_basic_user_file /etc/nginx/.htpasswd;  
 
-        try_files $uri $uri/ =404;  # Manejo de archivos y errores
+        try_files $uri $uri/ =404;  
     }
 }
 ```
