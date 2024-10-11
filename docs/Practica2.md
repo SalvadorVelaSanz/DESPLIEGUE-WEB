@@ -17,7 +17,7 @@ Y si no lo estuviera, instalarlo con el siguiente comando:
 sudo apt update sudo apt install openssl
 ```
 
-![Captura 1](/images/Practica2.2/1.png)
+![Captura 1](images/Practica2.2/1.png)
 
 ## Creación de usuarios y contraseñas para el acceso web
 
@@ -28,7 +28,7 @@ sudo sh -c "echo -n 'vuestro_nombre:' >> /etc/nginx/.htpasswd"
 ```
 
 
-![Captura 2](/images/Practica2.2/2.png)
+![Captura 2](images/Practica2.2/2.png)
 
 Ahora crearemos un password cifrado para el usuario:
 
@@ -37,7 +37,7 @@ sudo sh -c "openssl passwd -apr1 >> /etc/nginx/.htpasswd"
 ```
 
 
-![Captura 3](/images/Practica2.2/3.png)
+![Captura 3](images/Practica2.2/3.png)
 
 Este proceso se podrá repetir para tantos usuarios como haga falta.
 
@@ -47,31 +47,31 @@ Comprueba que el usuario y la contraseña aparecen cifrados en el fichero:
 `cat /etc/nginx/.htpasswd`
 
 
-![Captura 4](/images/Practica2.2/4.png)
+![Captura 4](images/Practica2.2/4.png)
 
 ## Configurando el servidor Nginx para usar autenticación básica
 
 Editaremos la configuración del **server block** sobre el cual queremos aplicar la restricción de acceso. Utilizaremos para esta autenticación el sitio web de la práctica anterior:
 
-![Captura 5](/images/Practica2.2/5.png)
+![Captura 5](images/Practica2.2/5.png)
 
 `sudo nano /etc/nginx/sites-available/nombre_web`
 
-![Captura 6](/images/Practica2.2/6.png)
+![Captura 6](images/Practica2.2/6.png)
 
-![Captura 7](/images/Practica2.2/7.png)
+![Captura 7](images/Practica2.2/7.png)
 
 Debemos decidir qué recursos estarán protegidos. Nginx permite añadir restricciones a nivel de servidor o en un `location` (directorio o archivo) específico. Para nuestro ejemplo, vamos a proteger el **document root** (la raíz, la página principal) de nuestro sitio.
 
 Utilizaremos la directiva `auth_basic` dentro del `location` y le pondremos el nombre a nuestro dominio que será mostrado al usuario al solicitar las credenciales. Por último, configuramos Nginx para que utilice el fichero que previamente hemos creado con la directiva `auth_basic_user_file`:
 
-![Captura 8](/images/Practica2.2/8.png)
+![Captura 8](images/Practica2.2/8.png)
 
 Una vez terminada la configuración, reiniciamos el servicio para que aplique nuestra política de acceso:
 
 `sudo systemctl restart nginx`
 
-![Captura 9](/images/Practica2.2/9.png)
+![Captura 9](images/Practica2.2/9.png)
 
 ## PROBANDO LA NUEVA CONFIGURACION
 
@@ -79,17 +79,17 @@ Una vez terminada la configuración, reiniciamos el servicio para que aplique nu
 
 Comprueba desde tu máquina física/anfitrión que puedes acceder a `http://nombre-sitio-web` y que se te solicita autenticación.
 
-![Captura 10](/images/Practica2.2/10.png)
+![Captura 10](images/Practica2.2/10.png)
 
 ### Comprobación 2
 
 Comprueba que si decides cancelar la autenticación, se te negará el acceso al sitio con un error. ¿Qué error es?
 
-![Captura 11](/images/Practica2.2/11.png)
+![Captura 11](images/Practica2.2/11.png)
 
 ### Registro del log de error 
 
-![Captura 12](/images/Practica2.2/12.png)
+![Captura 12](images/Practica2.2/12.png)
 
 Cuando hemos configurado el siguiente bloque:
 
@@ -138,7 +138,7 @@ Configura Nginx para que no deje acceder con la IP de la máquina anfitriona al 
 
 Para hacer esto nos deberemos ir al archivo `etc/nginx/sites-available/servidor1` y añadir la siguiente línea en `location /`:
 
-![Captura 13](/images/Practica2.2/13.png)
+![Captura 13](images/Practica2.2/13.png)
 
 Una vez terminado reiniciamos el servidor nginx con el comando:
 
@@ -146,11 +146,11 @@ Una vez terminado reiniciamos el servidor nginx con el comando:
 
 Muestra la página de error en el navegador.
 
-![Captura 14](/images/Practica2.2/14.png)
+![Captura 14](images/Practica2.2/14.png)
 
 Muestra el mensaje de error de `error.log`.
 
-![Captura 15](/images/Practica2.2/15.png)
+![Captura 15](images/Practica2.2/15.png)
 
 ### Tarea 2
 
@@ -158,19 +158,19 @@ Configura Nginx para que desde tu máquina anfitriona se tenga que tener tanto u
 
 Para hacer esto se debe de tener un usuario web con su contraseña ya definido. Como ya lo tenemos, solo tenemos que poner esto en el archivo `etc/nginx/sites-available/servidor1`:
 
-![Captura 16](/images/Practica2.2/16.png)
+![Captura 16](images/Practica2.2/16.png)
 
 y reiniciar el servidor con:
 
 `sudo systemctl restart nginx`
 
-![Captura 17](/images/Practica2.2/17.png)
+![Captura 17](images/Practica2.2/17.png)
 
-L![Captura 18](/images/Practica2.2/18.png)
+L![Captura 18](images/Practica2.2/18.png)
 
 Y este es el registro de `access.log`:
 
-![Captura 19](/images/Practica2.2/19.png)
+![Captura 19](images/Practica2.2/19.png)
 
 ## Cuestiones finales
 
