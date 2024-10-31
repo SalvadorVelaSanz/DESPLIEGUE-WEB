@@ -1,6 +1,6 @@
 site_name: My site
 site_url: https://SalvadorVelaSanz.github.io
- theme:
+theme:
   name: material
 nav:
   - Practica2.1: index.md  # Añade la referencia a tu archivo index.md
