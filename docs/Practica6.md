@@ -11,6 +11,11 @@ Realizaremos el despliegue manual de una aplicación ya previamente empaquetada 
 
 Tras estos pasos, se nos listará la aplicación ya desplegada como un directorio más y podremos acceder a ella.
 
+
+
+
+Esto detendra tomcat.
+
 ## Despliegue con Maven
 
 ### Instalación de Maven
