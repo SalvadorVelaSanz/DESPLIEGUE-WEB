@@ -2,9 +2,8 @@
 
 ## Instalación de servidor DNS
 
-Bind es el estándar de facto para servidores DNS. Es una herramienta de software libre y se distribuye con la mayoría de plataformas Unix y Linux, donde también se le conoce con el sobrenombre de named (name daemon). Bind9 es la versión recomendada para usarse y es la que emplearemos.
 
-Para instalar el servidor DNS en Ubuntu Server, usaremos los repositorios oficiales. Por ello, podremos instalarlo como cualquier paquete en Ubuntu:
+Para instalar el servidor DNS en Ubuntu podemos instalarlo como cualquier paquete en Ubuntu:
 
 ```bash
 sudo apt-get install bind9 bind9utils bind9-doc
@@ -13,12 +12,12 @@ sudo apt-get install bind9 bind9utils bind9-doc
 
 ## Configuración del servidor
 
-Puesto que en clase sólo vamos a utilizar IPv4, vamos a decírselo a Bind, en su archivo general de configuración. Este archivo named se encuentra en el directorio:
+Puesto que en clase sólo vamos a utilizar IPv4, en su archivo general de configuración  named que se encuentra en el directorio:
 
 `/etc/default`
 ![Captura 2](images/Practica4.1/2.png)
 
-Y para indicarle que sólo use IPv4, debemos modificar la línea siguiente con el texto resaltado:
+Y para indicarle que sólo use IPv4, debemos modificar esto:
 
 ```plaintext
 OPTIONS = "-u bind -4"
@@ -30,16 +29,12 @@ El archivo de configuración principal named.conf de Bind está en el directorio
 `/etc/bind`
 ![Captura 4](images/Practica4.1/4.png)
 
-Si lo consultamos veremos lo siguiente:
 
 ![Captura 5](images/Practica4.1/5.png)
 
-Este archivo sirve simplemente para aglutinar o agrupar a los archivos de configuración que usaremos. Estos 3 includes hacen referencia a los 3 diferentes archivos donde deberemos realizar la verdadera configuración, ubicados en el mismo directorio.
-
 ### Configuración named.conf.options
 
-Es una buena práctica que hagáis siempre una copia de seguridad de un archivo de configuración cada vez que vayáis a realizar algún cambio:
-
+Usamos este comando para hacer una copia de seguridad 
 ```bash
 sudo cp /etc/bind/named.conf.options /etc/bind/named.conf.options.backup
 ```
@@ -47,20 +42,8 @@ sudo cp /etc/bind/named.conf.options /etc/bind/named.conf.options.backup
 
 Ahora editaremos el archivo named.conf.options e incluiremos los siguientes contenidos:
 
-Por motivos de seguridad, vamos a incluir una lista de acceso para que sólo puedan hacer consultas recursivas al servidor aquellos hosts que nosotros decidamos.
-
-En nuestro caso, los hosts confiables serán los de la red 192.168.X.0/24 (donde la X depende de vuestra red de casa). Así pues, justo antes del bloque `options {…}`, al principio del archivo, añadiremos algo así:
-
 ![Captura 7](images/Practica4.1/7.png)
 
-Si nos fijamos el servidor por defecto ya viene configurado para ser un DNS caché. El directorio donde se cachearán o guardarán las zonas es `/var/cache/bind`.
-
-- Que sólo se permitan las consultas recursivas a los hosts que hemos decidido en la lista de acceso anterior.
-- No permitir transferencia de zonas a nadie, de momento.
-- Configurar el servidor para que escuche consultas DNS en el puerto 53 (por defecto DNS utiliza puerto 53 UDP) y en la IP de su interfaz de la red privada. Deberéis colocar la IP de la interfaz de vuestra Debian, puesto que resolverá las consultas DNS del cliente/s de esa red.
-- Permitir las consultas recursivas, ya que en el primer punto ya le hemos dicho que sólo puedan hacerlas los hosts de la ACL.
-
-Además, vamos a comentar la línea que pone `listen-on-v6 { any; };` puesto que no vamos a responder a consultas de IPv6. Para comentarla basta añadir al principio de la línea dos barras `//`. También podría hacerse con una almohadilla pero aparecería resaltado con color ya que estos comentarios los suele utilizar el administrador para aclarar algún aspecto de la configuración.
 
 ![Captura 8](images/Practica4.1/8.png)
 
@@ -70,7 +53,7 @@ Podemos comprobar si nuestra configuración es correcta con el comando:
 sudo named-checkconf
 ```
 
-Si hay algún error, nos lo hará saber. En caso contrario, nos devuelve a la línea de comandos.
+Si hay algún error aparecera a la hora de ejecutar el comando, si no nos devuelve a la línea de comandos.
 
 Reiniciamos el servidor y comprobamos su estado:
 
@@ -82,36 +65,33 @@ sudo systemctl status bind9
 
 ### Configuración named.conf.local
 
-En este archivo configuraremos aspectos relativos a nuestras zonas. Vamos a declarar la zona “deaw.es”. Por ahora simplemente indicaremos que el servidor DNS es maestro para esta zona y donde estará ubicado el archivo de zona que crearemos más adelante:
+En este archivo configuraremos aspectos relativos a nuestras zonas. Vamos a declarar la zona “deaw.es”. 
 
 ![Captura 10](images/Practica4.1/10.png)
 
 ### Creación del archivo de zona
 
-Vamos a crear el archivo de zona de resolución directa justo en el directorio que hemos indicado antes y con el mismo nombre que hemos indicado antes.
+Creamos el archivo de la zona directa en el directorio que le hemos especificado antes.
 
 ![Captura 11](images/Practica4.1/11.png)
 
-El contenido será algo así (procurad respetar el formato):
+El contenido será algo así (respetar el formato):
 
 ![Captura 12](images/Practica4.1/12.png)
 
 ### Creación del archivo de zona para la resolución inversa
 
-Recordad que deben existir ambos archivos de zona, uno para la resolución directa y otro para la inversa. Vamos pues a crear el archivo de zona inversa.
-
-En primer lugar, debemos añadir las líneas correspondientes a esta zona inversa en el archivo named.conf.local, igual que hemos hecho antes con la zona de resolución directa:
+Ahora se tiene que crear el archivo de la resolucion inversa, para ello en el mismo lugar que en la zona direxta se pone esto
 
 ![Captura 13](images/Practica4.1/13.png)
 
-Donde la X es el tercer byte de vuestra red.
+Donde la X es el tercer byte de la red de la maquina.
 
-Y la configuración de la zona de resolución inversa:
+Y se crea el archivo correspondiente con su configuracion:
 
 ![Captura 14](images/Practica4.1/14.png)
 ![Captura 15](images/Practica4.1/15.png)
 
-Podemos comprobar que la configuración de las zonas es correcta con el comando adecuado.
 
 ### Comprobación de las configuraciones
 
@@ -127,7 +107,7 @@ Y para comprobar la configuración de la zona de resolución inversa:
 sudo named-checkzone X.168.192.in-addr.arpa /etc/bind/db.X.168.192
 ```
 
-Si todo está bien, devolverá OK. En caso de haber algún error, nos informará de ello.
+Si todo está bien, devolverá OK. 
 
 ![Captura 16](images/Practica4.1/16.png)
 
@@ -141,54 +121,72 @@ sudo systemctl status bind9
 
 ## Atención
 
-Es muy importante que el cliente esté configurado para usar como servidor DNS el que acabamos de instalar y configurar. Ya sea Windows, ya sea Linux, debéis cambiar vuestra configuración de red para que la máquina con la que hagáis las pruebas utilice este servidor DNS como el principal.
+Es muy importante que el cliente esté configurado para usar como servidor DNS el que acabamos de instalar y 
+configurar. Ya sea Windows, ya sea Linux, debéis cambiar vuestra configuración de red para que la máquina con la 
+que hagáis las pruebas utilice este servidor DNS como el principal.
 
 ![Captura 18](images/Practica4.1/18.png)
 
 ## Comprobación de las resoluciones y de las consultas
 
-Podemos comprobar desde los clientes, con `dig` o `nslookup` las resoluciones directas e inversas.
+Podemos comprobar desde los clientes, con `dig` o `nslookup` las resoluciones directas e inversas en mi caso usare nslookup.
 
 ![Captura 19](images/Practica4.1/19.png)
 
 ## Cuestiones finales
 
-### Cuestión 1
+### Cuestión 1 ¿Qué pasará si un cliente de una red diferente a la tuya intenta hacer uso de tu DNS de alguna manera, le funcionará? ¿Por qué, en qué parte de la configuración puede verse?
 
-¿Qué pasará si un cliente de una red diferente a la tuya intenta hacer uso de tu DNS de alguna manera, le funcionará? ¿Por qué, en qué parte de la configuración puede verse?
+No le funcionará porque en la configuración del servidor DNS se especifican las redes o clientes 
+que tienen permitido hacer consultas. Esto se define en la ACL (allow-query en el archivo named.conf.options). 
+Si una IP o red no está incluida en esta lista, las consultas serán rechazadas.
 
-### Cuestión 2
+### Cuestión 2 ¿Por qué tenemos que permitir las consultas recursivas en la configuración?
 
-¿Por qué tenemos que permitir las consultas recursivas en la configuración?
+Las consultas recursivas permiten que el servidor DNS resuelva nombres de dominio que no están definidos
+en sus zonas configuradas localmente. Esto es útil para que los clientes puedan acceder a dominios externos
+como google.com a través de nuestro servidor. Sin consultas recursivas, el servidor solo respondería consultas
+sobre las zonas para las que es autoritativo.
 
-### Cuestión 3
+### Cuestión 3 ¿El servidor DNS que acabáis de montar, es autoritativo? ¿Por qué?
 
-El servidor DNS que acabáis de montar, ¿es autoritativo? ¿Por qué?
+Sí, es autoritativo para las zonas configuradas específicamente (como deaw.es). 
+Un servidor es autoritativo si tiene los datos originales de la zona y puede proporcionar respuestas definitivas
+para los nombres en esa zona. Esto se configura en los archivos de zona directa e inversa.
 
-### Cuestión 4
+### Cuestión 4 ¿Dónde podemos encontrar la directiva $ORIGIN y para qué sirve?
 
-¿Dónde podemos encontrar la directiva $ORIGIN y para qué sirve?
+La directiva $ORIGIN se encuentra en los archivos de zona y se utiliza para establecer un dominio base 
+para los registros que se definen después de ella. Si no se especifica un dominio completo en un registro,
+se añade automáticamente el valor de $ORIGIN. Por defecto, $ORIGIN toma el nombre de la zona configurada.
 
-### Cuestión 5
+### Cuestión 5 ¿Una zona es idéntico a un dominio?
 
-¿Una zona es idéntico a un dominio?
+No, una zona es una parte de un dominio que está bajo la administración de un servidor DNS.
+Un dominio puede estar compuesto por múltiples zonas. 
 
-### Cuestión 6
+### Cuestión 6 ¿Pueden editarse los archivos de zona de un servidor esclavo/secundario?
 
-¿Pueden editarse los archivos de zona de un servidor esclavo/secundario?
+No, los archivos de zona de un servidor esclavo no pueden editarse directamente porque estos son copias sincronizadas
+automáticamente desde el servidor maestro. Cualquier cambio debe hacerse en el servidor maestro, y el esclavo
+actualizará sus datos mediante transferencia de zona.
 
-### Cuestión 7
+### Cuestión 7 ¿Por qué podría querer tener más de un servidor esclavo para una misma zona?
 
-¿Por qué podría querer tener más de un servidor esclavo para una misma zona?
+Tener más de un servidor esclavo proporciona redundancia y mejora la disponibilidad del servicio DNS. 
+Si el servidor maestro o uno de los esclavos falla, los clientes aún pueden resolver nombres utilizando
+otro servidor esclavo.
 
-### Cuestión 8
+### Cuestión 8 ¿Cuántos servidores raíz existen?
 
-¿Cuántos servidores raíz existen?
+Existen 13 servidores raíz identificados por las letras de la "A" a la "M".
 
-### Cuestión 9
+### Cuestión 9 ¿Qué es una consulta iterativa de referencia?
 
-¿Qué es una consulta iterativa de referencia?
+Una consulta iterativa de referencia es un tipo de consulta realizada en el sistema DNS para resolver un nombre de 
+dominio de manera eficiente, donde el cliente DNS  se comunica con varios servidores DNS de manera secuencial hasta
 
-### Cuestión 10
+obtener una respuesta final.
+### Cuestión 10 En una resolución inversa, ¿a qué nombre se mapearía la dirección IP 172.16.34.56?
 
-En una resolución inversa, ¿a qué nombre se mapearía la dirección IP 172.16.34.56?
+La dirección IP 172.16.34.56 se mapearía al nombre 56.34.16.172.in-addr.arpa.
