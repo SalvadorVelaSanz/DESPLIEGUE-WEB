@@ -6,7 +6,7 @@
 
 ### 1. Estructura de directorios
 
-Para que quede claro todo el proceso que vamos a seguir, la estructura de directorios que nos debe quedar en nuestra Debian al finalizar la práctica es esta:
+La estructura de directorios que debe quedar es esta:
 
 ```
 /usuario/home/practica6-2/
@@ -17,11 +17,11 @@ Para que quede claro todo el proceso que vamos a seguir, la estructura de direct
 ├── php
 │   └── Dockerfile
 └── www
-    └── html
-        └── index.php
+  └── html
+    └── index.php
 ```
 
-Podéis ir creando los directorios y archivos paso a paso o crearlo todo a la vez y luego ir rellenando los archivos vacíos siguiendo un procedimiento como este:
+Se pueden ir crrando los directorios y los archivos segun se este haciendo la practica o todo a la vez, con comandos como estos:
 
 ```sh
 mkdir practica6-2
@@ -38,170 +38,144 @@ Para empezar, necesitamos crear y correr un contenedor Nginx que permita alojar 
 
 Dentro de la carpeta `/usuario/home/practica6-2/` debemos haber creado o crear ahora el archivo `docker-compose.yml`.
 
-Y editamos este archivo con el editor de texto que prefiramos, nano por ejemplo:
+Y editamos este archivo 
 
 ```sh
 nano docker-compose.yml
 ```
 
+![Captura 1](images/Practica6.2/1.png)
+
 Y añadimos las siguientes líneas:
 
-```yaml
-nginx:
-  image: nginx:latest
-  container_name: nginx-container
-  ports:
-    - 80:80
-```
+![Captura 2](images/Practica6.2/2.png)
 
 Y lo guardamos.
 
-El archivo que acabamos de crear será el encargado de descargarse la última versión de la imagen de Nginx, crear un contenedor con ella y publicar o escuchar en el puerto 80 del contenedor que también se corresponderá con el 80 de nuestra máquina (80:80).
 
-Iniciemos entonces este proceso:
+
+Despues ejecuutaremos lo siguiente: 
 
 ```sh
 docker-compose up -d
 ```
 
-Con la opción `-d` (de daemon), estamos indicando que el contenedor se ejecute en background o segundo plano.
+Con la opción `-d`  estamos indicando que el contenedor se ejecute en background o segundo plano.
 
-Para comprobar que el contenedor está corriendo, podemos hacer:
+Para comprobar que el contenedor esta activo usamos lo siguiente:
 
 ```sh
 docker ps
 ```
 
-Y deberíamos ver algo como:
 
-```
-CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                               NAMES
-c6641e4d5bbf   nginx:latest   "/docker-entrypoint.…"   5 seconds ago   Up 3 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   nginx-container
-```
+![Captura 3](images/Practica6.2/3.png)
 
-Además, si abrimos el navegador de nuestra máquina anfitrión y accedemos a `http://IP_Maq_Virtual` deberíamos ver la página de bienvenida de Nginx.
+Una vez hecho esto si nos vamos al navegador y ponemos la IP de nuestra maquina virtual y el puerto que hemos configurado (http://IP:PUERTO) nos saldra los siguiente:
+
+![Captura 4](images/Practica6.2/4.png)
 
 ### 3. Creación de un contenedor PHP
 
-Creamos la carpeta y el documento pertinente dentro de ella, si no lo habíamos hecho antes:
+Creamos la carpeta y el documento dentro de ella, si no se había hecho antes:
 
 ```sh
 mkdir -p /home/usuario/practica6-2/www/html
 nano /home/usuario/practica6-2/www/html/index.php
 ```
 
+![Captura 5](images/Practica6.2/5.png)
+
 Y dentro de `index.php` añadimos el siguiente código:
 
-```php
-<!DOCTYPE html>
-<head>
-  <title>¡Hola mundo!</title>
-</head>
+![Captura 6](images/Practica6.2/6.png)
 
-<body>
-  <h1>¡Hola mundo!</h1>
-  <p><?php echo 'Estamos corriendo PHP, version: ' . phpversion(); ?></p>
-</body>
-```
-
-Guardad el archivo y cread, si no lo habíais hecho antes, un directorio llamado `nginx` dentro del directorio del proyecto:
+ Se guarda el archivo y crea, si no estaba creado, un directorio llamado `nginx` dentro del directorio del proyecto:
 
 ```sh
 mkdir /home/usuario/practica6-2/nginx
 ```
 
-Ahora vamos a crear el archivo de configuración por defecto para que Nginx pueda correr la aplicación PHP:
+Crearamos el archivo de configuración por defecto para que Nginx pueda correr la aplicación PHP:
 
 ```sh
 nano /home/usuario/practica6-2/nginx/default.conf
 ```
 
+![Captura 7](images/Practica6.2/7.png)
+
 Y dentro de ese archivo, colocaremos la siguiente configuración:
+
+![Captura 8](images/Practica6.2/8.png)
+
+Codigo completo:
 
 ```nginx
 server {
 
-     listen 80 default_server;
-     root /var/www/html;
-     index index.html index.php;
+   listen 80 default_server;
+   root /var/www/html;
+   index index.html index.php;
 
-     charset utf-8;
+   charset utf-8;
 
-     location / {
-      try_files $uri $uri/ /index.php?$query_string;
-     }
+   location / {
+    try_files $uri $uri/ /index.php?$query_string;
+   }
 
-     location = /favicon.ico { access_log off; log_not_found off; }
-     location = /robots.txt { access_log off; log_not_found off; }
+   location = /favicon.ico { access_log off; log_not_found off; }
+   location = /robots.txt { access_log off; log_not_found off; }
 
-     access_log off;
-     error_log /var/log/nginx/error.log error;
+   access_log off;
+   error_log /var/log/nginx/error.log error;
 
-     sendfile off;
+   sendfile off;
 
-     client_max_body_size 100m;
+   client_max_body_size 100m;
 
-     location ~ .php$ {
-      fastcgi_split_path_info ^(.+.php)(/.+)$;
-      fastcgi_pass php:9000;
-      fastcgi_index index.php;
-      include fastcgi_params;
-      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-      fastcgi_intercept_errors off;
-      fastcgi_buffer_size 16k;
-      fastcgi_buffers 4 16k;
-    }
+   location ~ .php$ {
+    fastcgi_split_path_info ^(.+.php)(/.+)$;
+    fastcgi_pass php:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_intercept_errors off;
+    fastcgi_buffer_size 16k;
+    fastcgi_buffers 4 16k;
+  }
 
-     location ~ /.ht {
-      deny all;
-     }
+   location ~ /.ht {
+    deny all;
+   }
 }
 ```
 
-Guardamos el archivo y ahora crearemos el `Dockerfile` dentro del directorio `nginx`. En este archivo se copiará el archivo de configuración de Nginx al contenedor correspondiente. Así pues:
+Guardamos el archivo y ahora creamos el `Dockerfile` dentro del directorio `nginx`
 
 ```sh
 nano /home/usuario/practica6-2/nginx/Dockerfile
 ```
 
+![Captura 9](images/Practica6.2/9.png)
+
 Y dentro de este archivo:
 
-```dockerfile
-FROM nginx:latest
-COPY ./default.conf /etc/nginx/conf.d/default.conf
-```
+![Captura 10](images/Practica6.2/10.png)
 
 Y ahora editamos nuestro archivo `docker-compose.yml`:
 
-```yaml
-services:
-  nginx:
-    build: ./nginx/
-    container_name: nginx-container
-    ports:
-      - 80:80
-    links:
-      - php
-    volumes:
-      - ./www/html/:/var/www/html/
+![Captura 11](images/Practica6.2/11.png)
 
-  php:
-    image: php:7.0-fpm
-    container_name: php-container
-    expose:
-      - 9000
-    volumes:
-      - ./www/html/:/var/www/html/
-```
 
-Ahora con este fichero `docker-compose.yml` se creará un nuevo contenedor PHP-FPM en el puerto 9000, enlazará el contenedor nginx con el contenedor php, así como creará un volumen y lo montará en el directorio `/var/www/html` de los contenedores.
 
-Así pues, ejecutaremos el nuevo contenedor volviendo a ejecutar compose. Cuidado pues se debe ejecutar el comando en el mismo directorio donde tengamos nuestro archivo `docker-compose.yml`:
+Así pues, ejecutaremos el nuevo contenedor volviendo a ejecutar compose. Se debe ejecutar el comando en el mismo directorio donde tengamos nuestro archivo `docker-compose.yml`:
 
 ```sh
 cd /home/usuario/practica6-2
 docker-compose up -d
 ```
+
+![Captura 12](images/Practica6.2/12.png)
 
 Y comprobamos que los contenedores están corriendo:
 
@@ -209,7 +183,7 @@ Y comprobamos que los contenedores están corriendo:
 docker ps
 ```
 
-Debiendo ver algo como:
+Se debe de ver algo similar a esto:
 
 ```
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                               NAMES
@@ -217,13 +191,17 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 10778c6686d8   php:7.0-fpm            "docker-php-entrypoi…"   25 seconds ago   Up 23 seconds   9000/tcp                            php-container
 ```
 
-Y si ahora volvemos a acceder a `http://IP_Maq_Virtual`, veremos la página Hola mundo.
+![Captura 13](images/Practica6.2/13.png)
+
+Y si ahora volvemos a acceder a la ip de la maquina virtual desde el navegador, veremos la página Hola mundo.
+
+![Captura 14](images/Practica6.2/14.png)
 
 ### 4. Creación de un contenedor para datos
 
-Como véis, hemos montado el directorio `www/html` en ambos contenedores, el de nginx y el de php. Sin embargo, esta no es una forma adecuada de hacerlo. En este paso crearemos un contenedor independiente que se encargará de contener los datos y lo enlazaremos con el resto de contenedores.
+ En este paso crearemos un contenedor independiente que se encargará de contener los datos y lo enlazaremos con el resto de contenedores.
 
-Para llevar a cabo esta tarea, volvemos a editar el `docker-compose.yml`:
+Para hacer esto, volvemos a editar el `docker-compose.yml`:
 
 ```sh
 nano /usuario/home/practica6-2/docker-compose.yml
@@ -231,34 +209,9 @@ nano /usuario/home/practica6-2/docker-compose.yml
 
 Y añadiremos un nuevo servicio a los que ya teníamos, quedando así:
 
-```yaml
-nginx:
-  build: ./nginx/
-  container_name: nginx-container
-  ports:
-    - 80:80
-  links:
-    - php
-  volumes_from:
-    - app-data
+![Captura 15](images/Practica6.2/15.png)
 
-php:
-  image: php:7.0-fpm
-  container_name: php-container
-  expose:
-    - 9000
-  volumes_from:
-    - app-data
-
-app-data:
-  image: php:7.0-fpm
-  container_name: app-data-container
-  volumes:
-    - ./www/html/:/var/www/html/
-  command: "true"
-```
-
-Así que para recrear y lanzar todos los contenedores ejecutamos de nuevo (recordad, dentro del directorio donde se encuentra el archivo):
+Así que para recrear y lanzar todos los contenedores ejecutamos de nuevo dentro del directorio donde se encuentra el archivo:
 
 ```sh
 docker-compose up -d
@@ -279,11 +232,13 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 fbca95944234   php:7.0-fpm            "docker-php-entrypoi…"   29 seconds ago   Exited (0) 28 seconds ago                                       app-data-container
 ```
 
+![Captura 16](images/Practica6.2/16.png)
+
 ### 5. Creación de un contenedor MySQL
 
 En esta sección crearemos un contenedor de una base de datos MySQL y lo enlazaremos con el resto de contenedores.
 
-Primero, modificaremos la imagen PHP e instalaremos la extensión PHP para MySQL, de tal forma que nos permita conectarnos desde nuestra aplicación PHP a nuestra BBDD MySQL.
+Primero, modificaremos la imagen PHP e instalaremos la extensión PHP para MySQL
 
 Creamos, si no lo teníamos ya, nuestro directorio `php` y dentro de él, el archivo `Dockerfile`:
 
@@ -292,105 +247,32 @@ mkdir /home/usuario/practica6-2/php
 nano /home/usuario/practica6-2/php/Dockerfile
 ```
 
+![Captura 17](images/Practica6.2/17.png)
+
 Y dentro del `Dockerfile` ponemos:
 
-```dockerfile
-FROM php:7.0-fpm
-RUN docker-php-ext-install pdo_mysql
-```
+![Captura 18](images/Practica6.2/18.png)
 
 Y una vez más, debemos editar `docker-compose.yml` con el objetivo de que se creen el contenedor para MySQL y el contenedor de los datos de MySQL que contendrá la base de datos y las tablas:
 
-```yaml
-services:
-  nginx:
-    build: ./nginx/
-    container_name: nginx-container
-    ports:
-      - 80:80
-    links:
-      - php
-    volumes_from:
-      - app-data
-  php:
-    build: ./php/
-    container_name: php-container
-    expose:
-      - 9000
-    links:
-      - mysql
-    volumes_from:
-      - app-data
-
-  app-data:
-    image: php:7.0-fpm
-    container_name: app-data-container
-    volumes:
-      - ./www/html/:/var/www/html/
-    command: "true"
-
-  mysql:
-    image: mysql:5.7
-    container_name: mysql-container
-    volumes_from:
-      - mysql-data
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: password
-
-  mysql-data:
-    image: mysql:5.7
-    container_name: mysql-data-container
-    volumes:
-      - /var/lib/mysql
-    command: "true"
-```
+![Captura 19](images/Practica6.2/19.png)
 
 Después de guardar este archivo, editamos el archivo `index.php` y hacemos algunos cambios para comprobar la conexión a la base de datos.
 
 El archivo `index.php` debe quedar así:
 
-```php
-<!DOCTYPE html>
-<head>
-  <title>¡Hola mundo!</title>
-</head>
 
-<body>
-  <h1>¡Hola mundo!</h1>
-  <p><?php echo 'Estamos corriendo PHP, version: ' . phpversion(); ?></p>
-  <?php
-   $database ="mydb";
-   $user = "myuser";
-   $password = "password";
-   $host = "mysql";
 
-   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-   $query = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE='BASE TABLE'");
-   $tables = $query->fetchAll(PDO::FETCH_COLUMN);
+![Captura 20](images/Practica6.2/20.png)
 
-    if (empty($tables)) {
-      echo "<p>No hay tablas en la base de datos \"{$database}\".</p>";
-    } else {
-      echo "<p>La base de datos \"{$database}\" tiene las siguientes tablas:</p>";
-      echo "<ul>";
-        foreach ($tables as $table) {
-          echo "<li>{$table}</li>";
-        }
-      echo "</ul>";
-    }
-  ?>
-</body>
-</html>
-```
 
-Guardad el archivo y lanzad los contenedores una vez más:
+Se Guarda el archivo y se lanzan los contenedores una vez más:
 
 ```sh
 docker-compose up -d
 ```
+
+![Captura 21](images/Practica6.2/21.png)
 
 Y verificamos que están ejecutándose:
 
@@ -409,13 +291,17 @@ ca4f63797d11   docker-project_php     "docker-php-entrypoi…"   2 hours ago    
 fbca95944234   php:7.0-fpm            "docker-php-entrypoi…"   2 hours ago      Exited (0) 39 seconds ago                                       app-data-container
 ```
 
+![Captura 22](images/Practica6.2/22.png)
+
 ### 6. Verificación de conexión a la base de datos
 
-Si ahora accedemos a `http://IP_Maq_Virtual`, deberíamos obtener la siguiente pantalla:
+Si ahora accedemos a la ip de la maquina virtual desde el navegador como hemos hecho antes, deberíamos obtener la siguiente pantalla:
 
-Como podéis ver, nos dice que no tenemos ninguna tabla en la base de datos `mydb`.
+![Captura 23](images/Practica6.2/23.png)
 
-Sin embargo, el hecho es que realmente sí existen algunas tablas, simplemente no son visibles para un usuario normal. Si quisiéramos verlas, debemos editar el archivo `index.php` y cambiar `$user` por `root` y `$password` a `secret`.
+nos dice que no tenemos ninguna tabla en la base de datos `mydb`.
+
+Eso es debido a que tenemos que cambiar la variable $root y la variable $password del index.php
 
 Es decir:
 
@@ -430,4 +316,8 @@ $user = "root";
 $password = "secret";
 ```
 
-Guardad el archivo y refrescad la página. Deberías obtener ahora una pantalla con todas las tablas de la base de datos, tal que así:
+![Captura 24](images/Practica6.2/24.png)
+
+Una vez hecho esto nos dara este resultado:
+
+![Captura 25](images/Practica6.2/25.png)
