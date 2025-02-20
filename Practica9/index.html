@@ -1,0 +1,1112 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://SalvadorVelaSanz.github.io/Practica9/">
+      
+      
+        <link rel="prev" href="../PracticaAmpliacion/">
+      
+      
+        <link rel="next" href="../Practica10/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Practica4.1 - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-41-configuracion-de-un-servidor-dns" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practica4.1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PracticaAmpliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PracticaAmpliacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practica4.1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practica4.1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-servidor-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de servidor DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del servidor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-namedconfoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración named.conf.options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-namedconflocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración named.conf.local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-archivo-de-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del archivo de zona
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-archivo-de-zona-para-la-resolucion-inversa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del archivo de zona para la resolución inversa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-de-las-configuraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación de las configuraciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atencion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atención
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobacion-de-las-resoluciones-y-de-las-consultas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación de las resoluciones y de las consultas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuestiones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestiones finales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cuestiones finales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-1-que-pasara-si-un-cliente-de-una-red-diferente-a-la-tuya-intenta-hacer-uso-de-tu-dns-de-alguna-manera-le-funcionara-por-que-en-que-parte-de-la-configuracion-puede-verse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 1 ¿Qué pasará si un cliente de una red diferente a la tuya intenta hacer uso de tu DNS de alguna manera, le funcionará? ¿Por qué, en qué parte de la configuración puede verse?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-2-por-que-tenemos-que-permitir-las-consultas-recursivas-en-la-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 2 ¿Por qué tenemos que permitir las consultas recursivas en la configuración?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-3-el-servidor-dns-que-acabais-de-montar-es-autoritativo-por-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 3 ¿El servidor DNS que acabáis de montar, es autoritativo? ¿Por qué?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-4-donde-podemos-encontrar-la-directiva-origin-y-para-que-sirve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 4 ¿Dónde podemos encontrar la directiva $ORIGIN y para qué sirve?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-5-una-zona-es-identico-a-un-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 5 ¿Una zona es idéntico a un dominio?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-6-pueden-editarse-los-archivos-de-zona-de-un-servidor-esclavosecundario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 6 ¿Pueden editarse los archivos de zona de un servidor esclavo/secundario?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-7-por-que-podria-querer-tener-mas-de-un-servidor-esclavo-para-una-misma-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 7 ¿Por qué podría querer tener más de un servidor esclavo para una misma zona?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-8-cuantos-servidores-raiz-existen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 8 ¿Cuántos servidores raíz existen?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-9-que-es-una-consulta-iterativa-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 9 ¿Qué es una consulta iterativa de referencia?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-10-en-una-resolucion-inversa-a-que-nombre-se-mapearia-la-direccion-ip-172163456" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 10 En una resolución inversa, ¿a qué nombre se mapearía la dirección IP 172.16.34.56?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-servidor-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de servidor DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del servidor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-namedconfoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración named.conf.options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-namedconflocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración named.conf.local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-archivo-de-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del archivo de zona
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-del-archivo-de-zona-para-la-resolucion-inversa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del archivo de zona para la resolución inversa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-de-las-configuraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación de las configuraciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atencion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atención
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobacion-de-las-resoluciones-y-de-las-consultas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación de las resoluciones y de las consultas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuestiones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestiones finales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cuestiones finales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-1-que-pasara-si-un-cliente-de-una-red-diferente-a-la-tuya-intenta-hacer-uso-de-tu-dns-de-alguna-manera-le-funcionara-por-que-en-que-parte-de-la-configuracion-puede-verse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 1 ¿Qué pasará si un cliente de una red diferente a la tuya intenta hacer uso de tu DNS de alguna manera, le funcionará? ¿Por qué, en qué parte de la configuración puede verse?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-2-por-que-tenemos-que-permitir-las-consultas-recursivas-en-la-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 2 ¿Por qué tenemos que permitir las consultas recursivas en la configuración?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-3-el-servidor-dns-que-acabais-de-montar-es-autoritativo-por-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 3 ¿El servidor DNS que acabáis de montar, es autoritativo? ¿Por qué?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-4-donde-podemos-encontrar-la-directiva-origin-y-para-que-sirve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 4 ¿Dónde podemos encontrar la directiva $ORIGIN y para qué sirve?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-5-una-zona-es-identico-a-un-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 5 ¿Una zona es idéntico a un dominio?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-6-pueden-editarse-los-archivos-de-zona-de-un-servidor-esclavosecundario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 6 ¿Pueden editarse los archivos de zona de un servidor esclavo/secundario?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-7-por-que-podria-querer-tener-mas-de-un-servidor-esclavo-para-una-misma-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 7 ¿Por qué podría querer tener más de un servidor esclavo para una misma zona?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-8-cuantos-servidores-raiz-existen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 8 ¿Cuántos servidores raíz existen?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-9-que-es-una-consulta-iterativa-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 9 ¿Qué es una consulta iterativa de referencia?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-10-en-una-resolucion-inversa-a-que-nombre-se-mapearia-la-direccion-ip-172163456" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 10 En una resolución inversa, ¿a qué nombre se mapearía la dirección IP 172.16.34.56?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-41-configuracion-de-un-servidor-dns">Práctica 4.1 - Configuración de un servidor DNS</h1>
+<h2 id="instalacion-de-servidor-dns">Instalación de servidor DNS</h2>
+<p>Para instalar el servidor DNS en Ubuntu podemos instalarlo como cualquier paquete en Ubuntu:</p>
+<pre><code class="language-bash">sudo apt-get install bind9 bind9utils bind9-doc
+</code></pre>
+<p><img alt="Captura 1" src="../images/Practica4.1/1.png" /></p>
+<h2 id="configuracion-del-servidor">Configuración del servidor</h2>
+<p>Puesto que en clase sólo vamos a utilizar IPv4, en su archivo general de configuración  named que se encuentra en el directorio:</p>
+<p><code>/etc/default</code>
+<img alt="Captura 2" src="../images/Practica4.1/2.png" /></p>
+<p>Y para indicarle que sólo use IPv4, debemos modificar esto:</p>
+<pre><code class="language-plaintext">OPTIONS = &quot;-u bind -4&quot;
+</code></pre>
+<p><img alt="Captura 3" src="../images/Practica4.1/3.png" /></p>
+<p>El archivo de configuración principal named.conf de Bind está en el directorio:</p>
+<p><code>/etc/bind</code>
+<img alt="Captura 4" src="../images/Practica4.1/4.png" /></p>
+<p><img alt="Captura 5" src="../images/Practica4.1/5.png" /></p>
+<h3 id="configuracion-namedconfoptions">Configuración named.conf.options</h3>
+<p>Usamos este comando para hacer una copia de seguridad </p>
+<pre><code class="language-bash">sudo cp /etc/bind/named.conf.options /etc/bind/named.conf.options.backup
+</code></pre>
+<p><img alt="Captura 6" src="../images/Practica4.1/6.png" /></p>
+<p>Ahora editaremos el archivo named.conf.options e incluiremos los siguientes contenidos:</p>
+<p><img alt="Captura 7" src="../images/Practica4.1/7.png" /></p>
+<p><img alt="Captura 8" src="../images/Practica4.1/8.png" /></p>
+<p>Podemos comprobar si nuestra configuración es correcta con el comando:</p>
+<pre><code class="language-bash">sudo named-checkconf
+</code></pre>
+<p>Si hay algún error aparecera a la hora de ejecutar el comando, si no nos devuelve a la línea de comandos.</p>
+<p>Reiniciamos el servidor y comprobamos su estado:</p>
+<pre><code class="language-bash">sudo systemctl restart bind9
+sudo systemctl status bind9
+</code></pre>
+<p><img alt="Captura 9" src="../images/Practica4.1/9.png" /></p>
+<h3 id="configuracion-namedconflocal">Configuración named.conf.local</h3>
+<p>En este archivo configuraremos aspectos relativos a nuestras zonas. Vamos a declarar la zona “deaw.es”. </p>
+<p><img alt="Captura 10" src="../images/Practica4.1/10.png" /></p>
+<h3 id="creacion-del-archivo-de-zona">Creación del archivo de zona</h3>
+<p>Creamos el archivo de la zona directa en el directorio que le hemos especificado antes.</p>
+<p><img alt="Captura 11" src="../images/Practica4.1/11.png" /></p>
+<p>El contenido será algo así (respetar el formato):</p>
+<p><img alt="Captura 12" src="../images/Practica4.1/12.png" /></p>
+<h3 id="creacion-del-archivo-de-zona-para-la-resolucion-inversa">Creación del archivo de zona para la resolución inversa</h3>
+<p>Ahora se tiene que crear el archivo de la resolucion inversa, para ello en el mismo lugar que en la zona direxta se pone esto</p>
+<p><img alt="Captura 13" src="../images/Practica4.1/13.png" /></p>
+<p>Donde la X es el tercer byte de la red de la maquina.</p>
+<p>Y se crea el archivo correspondiente con su configuracion:</p>
+<p><img alt="Captura 14" src="../images/Practica4.1/14.png" />
+<img alt="Captura 15" src="../images/Practica4.1/15.png" /></p>
+<h3 id="comprobacion-de-las-configuraciones">Comprobación de las configuraciones</h3>
+<p>Para comprobar la configuración de la zona de resolución directa:</p>
+<pre><code class="language-bash">sudo named-checkzone deaw.es /etc/bind/db.deaw.es
+</code></pre>
+<p>Y para comprobar la configuración de la zona de resolución inversa:</p>
+<pre><code class="language-bash">sudo named-checkzone X.168.192.in-addr.arpa /etc/bind/db.X.168.192
+</code></pre>
+<p>Si todo está bien, devolverá OK. </p>
+<p><img alt="Captura 16" src="../images/Practica4.1/16.png" /></p>
+<p>Reiniciamos el servicio y comprobamos el estado:</p>
+<pre><code class="language-bash">sudo systemctl restart bind9
+sudo systemctl status bind9
+</code></pre>
+<p><img alt="Captura 17" src="../images/Practica4.1/17.png" /></p>
+<h2 id="atencion">Atención</h2>
+<p>Es muy importante que el cliente esté configurado para usar como servidor DNS el que acabamos de instalar y 
+configurar. Ya sea Windows, ya sea Linux, debéis cambiar vuestra configuración de red para que la máquina con la 
+que hagáis las pruebas utilice este servidor DNS como el principal.</p>
+<p><img alt="Captura 18" src="../images/Practica4.1/18.png" /></p>
+<h2 id="comprobacion-de-las-resoluciones-y-de-las-consultas">Comprobación de las resoluciones y de las consultas</h2>
+<p>Podemos comprobar desde los clientes, con <code>dig</code> o <code>nslookup</code> las resoluciones directas e inversas en mi caso usare nslookup.</p>
+<p><img alt="Captura 19" src="../images/Practica4.1/19.png" /></p>
+<h2 id="cuestiones-finales">Cuestiones finales</h2>
+<h3 id="cuestion-1-que-pasara-si-un-cliente-de-una-red-diferente-a-la-tuya-intenta-hacer-uso-de-tu-dns-de-alguna-manera-le-funcionara-por-que-en-que-parte-de-la-configuracion-puede-verse">Cuestión 1 ¿Qué pasará si un cliente de una red diferente a la tuya intenta hacer uso de tu DNS de alguna manera, le funcionará? ¿Por qué, en qué parte de la configuración puede verse?</h3>
+<p>No le funcionará porque en la configuración del servidor DNS se especifican las redes o clientes 
+que tienen permitido hacer consultas. Esto se define en la ACL (allow-query en el archivo named.conf.options). 
+Si una IP o red no está incluida en esta lista, las consultas serán rechazadas.</p>
+<h3 id="cuestion-2-por-que-tenemos-que-permitir-las-consultas-recursivas-en-la-configuracion">Cuestión 2 ¿Por qué tenemos que permitir las consultas recursivas en la configuración?</h3>
+<p>Las consultas recursivas permiten que el servidor DNS resuelva nombres de dominio que no están definidos
+en sus zonas configuradas localmente. Esto es útil para que los clientes puedan acceder a dominios externos
+como google.com a través de nuestro servidor. Sin consultas recursivas, el servidor solo respondería consultas
+sobre las zonas para las que es autoritativo.</p>
+<h3 id="cuestion-3-el-servidor-dns-que-acabais-de-montar-es-autoritativo-por-que">Cuestión 3 ¿El servidor DNS que acabáis de montar, es autoritativo? ¿Por qué?</h3>
+<p>Sí, es autoritativo para las zonas configuradas específicamente (como deaw.es). 
+Un servidor es autoritativo si tiene los datos originales de la zona y puede proporcionar respuestas definitivas
+para los nombres en esa zona. Esto se configura en los archivos de zona directa e inversa.</p>
+<h3 id="cuestion-4-donde-podemos-encontrar-la-directiva-origin-y-para-que-sirve">Cuestión 4 ¿Dónde podemos encontrar la directiva $ORIGIN y para qué sirve?</h3>
+<p>La directiva $ORIGIN se encuentra en los archivos de zona y se utiliza para establecer un dominio base 
+para los registros que se definen después de ella. Si no se especifica un dominio completo en un registro,
+se añade automáticamente el valor de $ORIGIN. Por defecto, $ORIGIN toma el nombre de la zona configurada.</p>
+<h3 id="cuestion-5-una-zona-es-identico-a-un-dominio">Cuestión 5 ¿Una zona es idéntico a un dominio?</h3>
+<p>No, una zona es una parte de un dominio que está bajo la administración de un servidor DNS.
+Un dominio puede estar compuesto por múltiples zonas. </p>
+<h3 id="cuestion-6-pueden-editarse-los-archivos-de-zona-de-un-servidor-esclavosecundario">Cuestión 6 ¿Pueden editarse los archivos de zona de un servidor esclavo/secundario?</h3>
+<p>No, los archivos de zona de un servidor esclavo no pueden editarse directamente porque estos son copias sincronizadas
+automáticamente desde el servidor maestro. Cualquier cambio debe hacerse en el servidor maestro, y el esclavo
+actualizará sus datos mediante transferencia de zona.</p>
+<h3 id="cuestion-7-por-que-podria-querer-tener-mas-de-un-servidor-esclavo-para-una-misma-zona">Cuestión 7 ¿Por qué podría querer tener más de un servidor esclavo para una misma zona?</h3>
+<p>Tener más de un servidor esclavo proporciona redundancia y mejora la disponibilidad del servicio DNS. 
+Si el servidor maestro o uno de los esclavos falla, los clientes aún pueden resolver nombres utilizando
+otro servidor esclavo.</p>
+<h3 id="cuestion-8-cuantos-servidores-raiz-existen">Cuestión 8 ¿Cuántos servidores raíz existen?</h3>
+<p>Existen 13 servidores raíz identificados por las letras de la "A" a la "M".</p>
+<h3 id="cuestion-9-que-es-una-consulta-iterativa-de-referencia">Cuestión 9 ¿Qué es una consulta iterativa de referencia?</h3>
+<p>Una consulta iterativa de referencia es un tipo de consulta realizada en el sistema DNS para resolver un nombre de 
+dominio de manera eficiente, donde el cliente DNS  se comunica con varios servidores DNS de manera secuencial hasta</p>
+<p>obtener una respuesta final.</p>
+<h3 id="cuestion-10-en-una-resolucion-inversa-a-que-nombre-se-mapearia-la-direccion-ip-172163456">Cuestión 10 En una resolución inversa, ¿a qué nombre se mapearía la dirección IP 172.16.34.56?</h3>
+<p>La dirección IP 172.16.34.56 se mapearía al nombre 56.34.16.172.in-addr.arpa.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

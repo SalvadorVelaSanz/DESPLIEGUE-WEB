@@ -1,0 +1,1164 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://SalvadorVelaSanz.github.io/Practica10/">
+      
+      
+        <link rel="prev" href="../Practica9/">
+      
+      
+        <link rel="next" href="../Practica11/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Practica5.1 - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-i" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practica5.1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PracticaAmpliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PracticaAmpliacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practica5.1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practica5.1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-deaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositorio DEAW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      README
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-inicial-push-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit inicial, Push inicial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignorar-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-fichero-1txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir fichero 1.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-el-tag-v01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear el tag v0.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-rama-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una rama v0.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-fichero-2txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir fichero 2.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-rama-remota-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear rama remota v0.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-directo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge directo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-con-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge con conflicto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arreglar-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arreglar conflicto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borrar-rama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar rama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-cambios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de cambios
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repositorio-deaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositorio DEAW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      README
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-inicial-push-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit inicial, Push inicial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignorar-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-fichero-1txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir fichero 1.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-el-tag-v01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear el tag v0.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-rama-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una rama v0.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-fichero-2txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir fichero 2.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-rama-remota-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear rama remota v0.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-directo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge directo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-con-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge con conflicto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arreglar-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arreglar conflicto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borrar-rama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar rama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-cambios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de cambios
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="github-i">GITHUB I</h1>
+<h2 id="repositorio-deaw">Repositorio DEAW</h2>
+<ol>
+<li>Crear un repositorio en vuestro GitHub llamado DEAW.</li>
+<li>Clonar vuestro repositorio en local.</li>
+</ol>
+<p><img alt="Captura 1" src="../images/Practica5.1/Parte1/1.png" />
+<img alt="Captura 2" src="../images/Practica5.1/Parte1/2.png" /></p>
+<h2 id="readme">README</h2>
+<ol>
+<li>Crear (si no lo habéis creado ya) en vuestro repositorio local un documento <code>README.md</code>.</li>
+<li>Escribir un pequeño texto en este README a propósito del repositorio y el módulo para el que se utilizará.</li>
+</ol>
+<p><img alt="Captura 3" src="../images/Practica5.1/Parte1/3.png" /></p>
+<h2 id="commit-inicial-push-inicial">Commit inicial, Push inicial</h2>
+<ol>
+<li>Realizar un commit inicial con el comentario <code>Comenzamos con los ejercicios de Git</code>.</li>
+<li>Subir los cambios al repositorio remoto.</li>
+</ol>
+<p><img alt="Captura 4" src="../images/Practica5.1/Parte1/4.png" /></p>
+<h2 id="ignorar-archivos">Ignorar archivos</h2>
+<ol>
+<li>Crear en el repositorio local un fichero llamado <code>privado.txt</code>.</li>
+<li>Crear en el repositorio local una carpeta llamada <code>privada</code>.</li>
+<li>Realizar los cambios oportunos para que tanto el archivo como la carpeta sean ignorados por git.</li>
+</ol>
+<p><img alt="Captura 5" src="../images/Practica5.1/Parte1/5.png" />
+<img alt="Captura 6" src="../images/Practica5.1/Parte1/6.png" /></p>
+<h2 id="anadir-fichero-1txt">Añadir fichero <code>1.txt</code></h2>
+<ol>
+<li>Añadir fichero <code>1.txt</code> al repositorio local.</li>
+</ol>
+<h2 id="crear-el-tag-v01">Crear el tag <code>v0.1</code></h2>
+<ol>
+<li>Crear un tag <code>v0.1</code>.</li>
+<li>Subir los cambios al repositorio remoto.</li>
+</ol>
+<p><img alt="Captura 7" src="../images/Practica5.1/Parte1/7.png" /></p>
+<h2 id="crear-una-rama-v02">Crear una rama <code>v0.2</code></h2>
+<ol>
+<li>Crear una rama <code>v0.2</code>.</li>
+<li>Posiciona tu carpeta de trabajo en esta rama.</li>
+</ol>
+<h2 id="anadir-fichero-2txt">Añadir fichero <code>2.txt</code></h2>
+<ol>
+<li>Añadir un fichero <code>2.txt</code> en la rama <code>v0.2</code>.</li>
+</ol>
+<h2 id="crear-rama-remota-v02">Crear rama remota <code>v0.2</code></h2>
+<ol>
+<li>Subir los cambios al repositorio remoto.</li>
+</ol>
+<p><img alt="Captura 8" src="../images/Practica5.1/Parte1/8.png" /></p>
+<h2 id="merge-directo">Merge directo</h2>
+<ol>
+<li>Posicionarse en la rama <code>master</code>.</li>
+<li>Hacer un merge de la rama <code>v0.2</code> en la rama <code>master</code>.</li>
+</ol>
+<p><img alt="Captura 9" src="../images/Practica5.1/Parte1/9.png" /></p>
+<h2 id="merge-con-conflicto">Merge con conflicto</h2>
+<ol>
+<li>En la rama <code>master</code> poner <code>Hola</code> en el fichero <code>1.txt</code> y hacer commit.</li>
+<li>Posicionarse en la rama <code>v0.2</code> y poner <code>Adios</code> en el fichero <code>1.txt</code> y hacer commit.</li>
+<li>Posicionarse de nuevo en la rama <code>master</code> y hacer un merge con la rama <code>v0.2</code>.</li>
+</ol>
+<p><img alt="Captura 10" src="../images/Practica5.1/Parte1/10.png" /></p>
+<h2 id="listado-de-ramas">Listado de ramas</h2>
+<ol>
+<li>Listar las ramas con merge y las ramas sin merge.</li>
+</ol>
+<p><img alt="Captura 11" src="../images/Practica5.1/Parte1/11.png" /></p>
+<h2 id="arreglar-conflicto">Arreglar conflicto</h2>
+<ol>
+<li>Arreglar el conflicto anterior y hacer un commit.</li>
+</ol>
+<p><img alt="Captura 12" src="../images/Practica5.1/Parte1/12.png" />
+<img alt="Captura 13" src="../images/Practica5.1/Parte1/13.png" /></p>
+<h2 id="borrar-rama">Borrar rama</h2>
+<ol>
+<li>Crear un tag <code>v0.2</code>.</li>
+<li>Borrar la rama <code>v0.2</code>.</li>
+</ol>
+<p><img alt="Captura 14" src="../images/Practica5.1/Parte1/14.png" /></p>
+<h2 id="listado-de-cambios">Listado de cambios</h2>
+<ol>
+<li>Listar los distintos commits con sus ramas y sus tags.</li>
+</ol>
+<p><img alt="Captura 14" src="../images/Practica5.1/Parte1/15.png" /></p>
+<h1 id="github-ii">GITHUB II</h1>
+<h2 id="ejercicios-de-creacion-y-actualizacion-de-repositorios">Ejercicios de creación y actualización de repositorios</h2>
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+<p>Configurar Git definiendo el nombre del usuario, el correo electrónico y activar el coloreado de la salida.</p>
+<p>Mostrar la configuración final.</p>
+<p><img alt="Captura 1" src="../images/Practica5.1/Parte2/1.png" /></p>
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+<p>Crear un repositorio nuevo con el nombre libro y mostrar su contenido.</p>
+<p><img alt="Captura 2" src="../images/Practica5.1/Parte2/2.png" /></p>
+<h3 id="ejercicio-3">Ejercicio 3</h3>
+<p>Comprobar el estado del repositorio.</p>
+<p>Crear un fichero <code>indice.txt</code> con el siguiente contenido:</p>
+<pre><code>Capítulo 1: Introducción a Git
+Capítulo 2: Flujo de trabajo básico
+Capítulo 3: Repositorios remotos
+</code></pre>
+<p>Comprobar de nuevo el estado del repositorio.</p>
+<p>Añadir el fichero a la zona de intercambio temporal.</p>
+<p>Volver a comprobar una vez más el estado del repositorio.</p>
+<p><img alt="Captura 3" src="../images/Practica5.1/Parte2/3.png" /></p>
+<h3 id="ejercicio-4">Ejercicio 4</h3>
+<p>Realizar un commit de los últimos cambios con el mensaje “Añadido índice del libro.” y ver el estado del repositorio.</p>
+<p><img alt="Captura 4" src="../images/Practica5.1/Parte2/4.png" /></p>
+<h3 id="ejercicio-5">Ejercicio 5</h3>
+<p>Cambiar el fichero <code>indice.txt</code> para que contenga lo siguiente:</p>
+<pre><code>Capítulo 1: Introducción a Git
+Capítulo 2: Flujo de trabajo básico
+Capítulo 3: Gestión de ramas
+Capítulo 4: Repositorios remotos
+</code></pre>
+<p>Mostrar los cambios con respecto a la última versión guardada en el repositorio.</p>
+<p>Hacer un commit de los cambios con el mensaje “Añadido capítulo 3 sobre gestión de ramas”.</p>
+<p><img alt="Captura 5" src="../images/Practica5.1/Parte2/5.png" /></p>
+<h3 id="ejercicio-6">Ejercicio 6</h3>
+<p>Mostrar los cambios de la última versión del repositorio con respecto a la anterior.</p>
+<p>Cambiar el mensaje del último commit por “Añadido capítulo 3 sobre gestión de ramas al índice.”</p>
+<p>Volver a mostrar los últimos cambios del repositorio.</p>
+<p><img alt="Captura 6" src="../images/Practica5.1/Parte2/6.png" /></p>
+<h2 id="ejercicios-de-manejo-del-historial-de-cambios">Ejercicios de manejo del historial de cambios</h2>
+<h3 id="ejercicio-1_1">Ejercicio 1</h3>
+<p>Mostrar el historial de cambios del repositorio.</p>
+<p>Crear la carpeta <code>capitulos</code> y crear dentro de ella el fichero <code>capitulo1.txt</code> con el siguiente texto.</p>
+<pre><code>Git es un sistema de control de versiones ideado por Linus Torvalds.
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit de los cambios con el mensaje “Añadido capítulo 1.” Volver a mostrar el historial de cambios del repositorio.</p>
+<p><img alt="Captura 7" src="../images/Practica5.1/Parte2/7.png" /></p>
+<h3 id="ejercicio-2_1">Ejercicio 2</h3>
+<p>Crear el fichero <code>capitulo2.txt</code> en la carpeta <code>capitulos</code> con el siguiente texto.</p>
+<pre><code>El flujo de trabajo básico con Git consiste en: 
+1- Hacer cambios en el repositorio. 
+2- Añadir los cambios a la zona de intercambio temporal. 
+3- Hacer un commit de los cambios.
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit de los cambios con el mensaje “Añadido capítulo 2.”</p>
+<p>Mostrar las diferencias entre la última versión y dos versiones anteriores.</p>
+<p><img alt="Captura 8" src="../images/Practica5.1/Parte2/8.png" /></p>
+<h3 id="ejercicio-3_1">Ejercicio 3</h3>
+<p>Crear el fichero <code>capitulo3.txt</code> en la carpeta <code>capitulos</code> con el siguiente texto.</p>
+<pre><code>Git permite la creación de ramas lo que permite tener distintas versiones del mismo proyecto y trabajar de manera simultanea en ellas.
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit de los cambios con el mensaje “Añadido capítulo 3.”</p>
+<p>Mostrar las diferencias entre la primera y la última versión del repositorio.</p>
+<p><img alt="Captura 9" src="../images/Practica5.1/Parte2/9.png" /></p>
+<h3 id="ejercicio-4_1">Ejercicio 4</h3>
+<p>Añadir al final del fichero <code>indice.txt</code> la siguiente línea:</p>
+<pre><code>Capítulo 5: Conceptos avanzados
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit de los cambios con el mensaje “Añadido capítulo 5 al índice.”</p>
+<p>Mostrar quién ha hecho cambios sobre el fichero <code>indice.txt</code>.
+<img alt="Captura 10" src="../images/Practica5.1/Parte2/10.png" /></p>
+<h2 id="ejercicios-de-deshacer-cambios">Ejercicios de deshacer cambios</h2>
+<h3 id="ejercicio-1_2">Ejercicio 1</h3>
+<p>Eliminar la última línea del fichero <code>indice.txt</code> y guardarlo.</p>
+<p>Comprobar el estado del repositorio.</p>
+<p>Deshacer los cambios realizados en el fichero <code>indice.txt</code> para volver a la versión anterior del fichero.</p>
+<p>Volver a comprobar el estado del repositorio.
+<img alt="Captura 11" src="../images/Practica5.1/Parte2/11.png" /></p>
+<h3 id="ejercicio-2_2">Ejercicio 2</h3>
+<p>Eliminar la última línea del fichero <code>indice.txt</code> y guardarlo.</p>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Comprobar de nuevo el estado del repositorio.</p>
+<p>Quitar los cambios de la zona de intercambio temporal, pero mantenerlos en el directorio de trabajo.</p>
+<p>Comprobar de nuevo el estado del repositorio.</p>
+<p>Deshacer los cambios realizados en el fichero <code>indice.txt</code> para volver a la versión anterior del fichero.</p>
+<p>Volver a comprobar el estado del repositorio.
+<img alt="Captura 12" src="../images/Practica5.1/Parte2/12.png" /></p>
+<h3 id="ejercicio-3_2">Ejercicio 3</h3>
+<p>Eliminar la última línea del fichero <code>indice.txt</code> y guardarlo.</p>
+<p>Eliminar el fichero <code>capitulos/capitulo3.txt</code>.</p>
+<p>Añadir un fichero nuevo <code>capitulos/capitulo4.txt</code> vacío.</p>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Comprobar de nuevo el estado del repositorio.</p>
+<p>Quitar los cambios de la zona de intercambio temporal, pero mantenerlos en el directorio de trabajo.</p>
+<p>Comprobar de nuevo el estado del repositorio.</p>
+<p>Deshacer los cambios realizados para volver a la versión del repositorio.</p>
+<p>Volver a comprobar el estado del repositorio.</p>
+<p><img alt="Captura 13" src="../images/Practica5.1/Parte2/13.png" />
+<img alt="Captura 14" src="../images/Practica5.1/Parte2/14.png" /></p>
+<h3 id="ejercicio-4_2">Ejercicio 4</h3>
+<p>Eliminar la última línea del fichero <code>indice.txt</code> y guardarlo.</p>
+<p>Eliminar el fichero <code>capitulos/capitulo3.txt</code>.</p>
+<p>Añadir los cambios a la zona de intercambio temporal y hacer un commit con el mensaje “Borrado accidental.”</p>
+<p>Comprobar el historial del repositorio.</p>
+<p>Deshacer el último commit pero mantener los cambios anteriores en el directorio de trabajo y la zona de intercambio temporal.</p>
+<p>Comprobar el historial y el estado del repositorio.</p>
+<p>Volver a hacer el commit con el mismo mensaje de antes.</p>
+<p>Deshacer el último commit y los cambios anteriores del directorio de trabajo volviendo a la versión anterior del repositorio.</p>
+<p>Comprobar de nuevo el historial y el estado del repositorio.
+<img alt="Captura 15" src="../images/Practica5.1/Parte2/15.png" />
+<img alt="Captura 16" src="../images/Practica5.1/Parte2/16.png" /></p>
+<h2 id="ejercicios-de-gestion-de-ramas">Ejercicios de gestión de ramas</h2>
+<h3 id="ejercicio-1_3">Ejercicio 1</h3>
+<p>Crear una nueva rama <code>bibliografia</code> y mostrar las ramas del repositorio.</p>
+<p><img alt="Captura 17" src="../images/Practica5.1/Parte2/17.png" /></p>
+<h3 id="ejercicio-2_3">Ejercicio 2</h3>
+<p>Crear el fichero <code>capitulos/capitulo4.txt</code> y añadir el texto siguiente:</p>
+<pre><code>En este capítulo veremos cómo usar GitHub para alojar repositorios en remoto.
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit con el mensaje “Añadido capítulo 4.”</p>
+<p>Mostrar la historia del repositorio incluyendo todas las ramas.</p>
+<p><img alt="Captura 18" src="../images/Practica5.1/Parte2/18.png" /></p>
+<h3 id="ejercicio-3_3">Ejercicio 3</h3>
+<p>Cambiar a la rama <code>bibliografia</code>.</p>
+<p>Crear el fichero <code>bibliografia.txt</code> y añadir la siguiente referencia:</p>
+<pre><code>Chacon, S. and Straub, B. Pro Git. Apress.
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit con el mensaje “Añadida primera referencia bibliográfica.”</p>
+<p>Mostrar la historia del repositorio incluyendo todas las ramas.</p>
+<p><img alt="Captura 19" src="../images/Practica5.1/Parte2/19.png" /></p>
+<h3 id="ejercicio-4_3">Ejercicio 4</h3>
+<p>Fusionar la rama <code>bibliografia</code> con la rama <code>master</code>.</p>
+<p>Mostrar la historia del repositorio incluyendo todas las ramas.</p>
+<p>Eliminar la rama <code>bibliografia</code>.</p>
+<p>Mostrar de nuevo la historia del repositorio incluyendo todas las ramas.</p>
+<p><img alt="Captura 20" src="../images/Practica5.1/Parte2/20.png" /></p>
+<h3 id="ejercicio-5_1">Ejercicio 5</h3>
+<p>Crear la rama <code>bibliografia</code>.</p>
+<p>Cambiar a la rama <code>bibliografia</code>.</p>
+<p>Cambiar el fichero <code>bibliografia.txt</code> para que contenga las siguientes referencias:</p>
+<pre><code>Scott Chacon and Ben Straub. Pro Git. Apress.
+Ryan Hodson. Ry’s Git Tutorial. Smashwords (2014)
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal y hacer un commit con el mensaje “Añadida nueva referencia bibliográfica.”</p>
+<p>Cambiar a la rama <code>master</code>.</p>
+<p>Cambiar el fichero <code>bibliografia.txt</code> para que contenga las siguientes referencias:</p>
+<pre><code>Chacon, S. and Straub, B. Pro Git. Apress.
+Loeliger, J. and McCullough, M. Version control with Git. O’Reilly.
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal y hacer un commit con el mensaje “Añadida nueva referencia bibliográfica.”</p>
+<p>Fusionar la rama <code>bibliografia</code> con la rama <code>master</code>.</p>
+<p>Resolver el conflicto dejando el fichero <code>bibliografia.txt</code> con las referencias:</p>
+<pre><code>Chacon, S. and Straub, B. Pro Git. Apress.
+Loeliger, J. and McCullough, M. Version control with Git. O’Reilly.
+Hodson, R. Ry’s Git Tutorial. Smashwords (2014)
+</code></pre>
+<p>Añadir los cambios a la zona de intercambio temporal y hacer un commit con el mensaje “Resuelto conflicto de bibliografía.”</p>
+<p>Mostrar la historia del repositorio incluyendo todas las ramas.</p>
+<p><img alt="Captura 21" src="../images/Practica5.1/Parte2/21.png" />
+<img alt="Captura 22" src="../images/Practica5.1/Parte2/22.png" />
+<img alt="Captura 23" src="../images/Practica5.1/Parte2/23.png" /></p>
+<h2 id="ejercicios-de-repositorios-remotos">Ejercicios de repositorios remotos</h2>
+<h3 id="ejercicio-1_4">Ejercicio 1</h3>
+<p>Crear un nuevo repositorio público en GitHub con el nombre <code>libro-git</code>.</p>
+<p>Añadirlo al repositorio local del libro.</p>
+<p>Mostrar todos los repositorios remotos configurados.</p>
+<p><img alt="Captura 24" src="../images/Practica5.1/Parte2/24.png" />
+<img alt="Captura 25" src="../images/Practica5.1/Parte2/25.png" /></p>
+<h3 id="ejercicio-2_4">Ejercicio 2</h3>
+<p>Añadir los cambios del repositorio local al repositorio remoto de GitHub.</p>
+<p>Acceder a GitHub y comprobar que se han subido los cambios mostrando el historial de versiones.</p>
+<p><img alt="Captura 26" src="../images/Practica5.1/Parte2/26.png" />
+<img alt="Captura 30" src="../images/Practica5.1/Parte2/30.png" /></p>
+<h3 id="ejercicio-3_4">Ejercicio 3</h3>
+<p>Colaborar en el repositorio remoto <code>libro-git</code> de otro usuario.</p>
+<p>Clonar su repositorio <code>libro-git</code>.</p>
+<p>Añadir el fichero <code>autores.txt</code> que contenga el nombre del usuario y su correo electrónico.</p>
+<p>Añadir los cambios a la zona de intercambio temporal.</p>
+<p>Hacer un commit con el mensaje “Añadido autor.”</p>
+<p>Subir los cambios al repositorio remoto.</p>
+<p><img alt="Captura 27" src="../images/Practica5.1/Parte2/27.png" />
+<img alt="Captura 28" src="../images/Practica5.1/Parte2/28.png" />
+<img alt="Captura 29" src="../images/Practica5.1/Parte2/29.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

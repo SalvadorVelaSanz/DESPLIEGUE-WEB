@@ -1,0 +1,965 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://SalvadorVelaSanz.github.io/Practica12/">
+      
+      
+        <link rel="prev" href="../Practica11/">
+      
+      
+        <link rel="next" href="../Practica13/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Practica6.2 - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-62-despliegue-de-una-aplicacion-php-con-nginx-y-mysql-usando-docker-y-docker-compose" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practica6.2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PracticaAmpliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PracticaAmpliacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practica6.2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de docker-compose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-dockerizacion-de-nginxphpmysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de dockerización de Nginx+PHP+MySQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proceso de dockerización de Nginx+PHP+MySQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-estructura-de-directorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Estructura de directorios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creacion-de-un-contenedor-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Creación de un contenedor Nginx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creacion-de-un-contenedor-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Creación de un contenedor PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creacion-de-un-contenedor-para-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Creación de un contenedor para datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-creacion-de-un-contenedor-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Creación de un contenedor MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verificacion-de-conexion-a-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verificación de conexión a la base de datos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de docker-compose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-dockerizacion-de-nginxphpmysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de dockerización de Nginx+PHP+MySQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proceso de dockerización de Nginx+PHP+MySQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-estructura-de-directorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Estructura de directorios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creacion-de-un-contenedor-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Creación de un contenedor Nginx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creacion-de-un-contenedor-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Creación de un contenedor PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creacion-de-un-contenedor-para-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Creación de un contenedor para datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-creacion-de-un-contenedor-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Creación de un contenedor MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verificacion-de-conexion-a-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verificación de conexión a la base de datos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-62-despliegue-de-una-aplicacion-php-con-nginx-y-mysql-usando-docker-y-docker-compose">Práctica 6.2 - Despliegue de una aplicación PHP con Nginx y MySQL usando Docker y docker-compose</h1>
+<h2 id="instalacion-de-docker-compose">Instalación de docker-compose</h2>
+<h2 id="proceso-de-dockerizacion-de-nginxphpmysql">Proceso de dockerización de Nginx+PHP+MySQL</h2>
+<h3 id="1-estructura-de-directorios">1. Estructura de directorios</h3>
+<p>La estructura de directorios que debe quedar es esta:</p>
+<pre><code>/usuario/home/practica6-2/
+├── docker-compose.yml
+├── nginx
+│   ├── default.conf
+│   └── Dockerfile
+├── php
+│   └── Dockerfile
+└── www
+  └── html
+    └── index.php
+</code></pre>
+<p>Se pueden ir crrando los directorios y los archivos segun se este haciendo la practica o todo a la vez, con comandos como estos:</p>
+<pre><code class="language-sh">mkdir practica6-2
+cd practica6-2
+touch docker-compose.yml
+mkdir nginx
+touch nginx/default.conf
+...
+</code></pre>
+<h3 id="2-creacion-de-un-contenedor-nginx">2. Creación de un contenedor Nginx</h3>
+<p>Para empezar, necesitamos crear y correr un contenedor Nginx que permita alojar nuestra aplicación en PHP.</p>
+<p>Dentro de la carpeta <code>/usuario/home/practica6-2/</code> debemos haber creado o crear ahora el archivo <code>docker-compose.yml</code>.</p>
+<p>Y editamos este archivo </p>
+<pre><code class="language-sh">nano docker-compose.yml
+</code></pre>
+<p><img alt="Captura 1" src="../images/Practica6.2/1.png" /></p>
+<p>Y añadimos las siguientes líneas:</p>
+<p><img alt="Captura 2" src="../images/Practica6.2/2.png" /></p>
+<p>Y lo guardamos.</p>
+<p>Despues ejecuutaremos lo siguiente: </p>
+<pre><code class="language-sh">docker-compose up -d
+</code></pre>
+<p>Con la opción <code>-d</code>  estamos indicando que el contenedor se ejecute en background o segundo plano.</p>
+<p>Para comprobar que el contenedor esta activo usamos lo siguiente:</p>
+<pre><code class="language-sh">docker ps
+</code></pre>
+<p><img alt="Captura 3" src="../images/Practica6.2/3.png" /></p>
+<p>Una vez hecho esto si nos vamos al navegador y ponemos la IP de nuestra maquina virtual y el puerto que hemos configurado (http://IP:PUERTO) nos saldra los siguiente:</p>
+<p><img alt="Captura 4" src="../images/Practica6.2/4.png" /></p>
+<h3 id="3-creacion-de-un-contenedor-php">3. Creación de un contenedor PHP</h3>
+<p>Creamos la carpeta y el documento dentro de ella, si no se había hecho antes:</p>
+<pre><code class="language-sh">mkdir -p /home/usuario/practica6-2/www/html
+nano /home/usuario/practica6-2/www/html/index.php
+</code></pre>
+<p><img alt="Captura 5" src="../images/Practica6.2/5.png" /></p>
+<p>Y dentro de <code>index.php</code> añadimos el siguiente código:</p>
+<p><img alt="Captura 6" src="../images/Practica6.2/6.png" /></p>
+<p>Se guarda el archivo y crea, si no estaba creado, un directorio llamado <code>nginx</code> dentro del directorio del proyecto:</p>
+<pre><code class="language-sh">mkdir /home/usuario/practica6-2/nginx
+</code></pre>
+<p>Crearamos el archivo de configuración por defecto para que Nginx pueda correr la aplicación PHP:</p>
+<pre><code class="language-sh">nano /home/usuario/practica6-2/nginx/default.conf
+</code></pre>
+<p><img alt="Captura 7" src="../images/Practica6.2/7.png" /></p>
+<p>Y dentro de ese archivo, colocaremos la siguiente configuración:</p>
+<p><img alt="Captura 8" src="../images/Practica6.2/8.png" /></p>
+<p>Codigo completo:</p>
+<pre><code class="language-nginx">server {
+
+   listen 80 default_server;
+   root /var/www/html;
+   index index.html index.php;
+
+   charset utf-8;
+
+   location / {
+    try_files $uri $uri/ /index.php?$query_string;
+   }
+
+   location = /favicon.ico { access_log off; log_not_found off; }
+   location = /robots.txt { access_log off; log_not_found off; }
+
+   access_log off;
+   error_log /var/log/nginx/error.log error;
+
+   sendfile off;
+
+   client_max_body_size 100m;
+
+   location ~ .php$ {
+    fastcgi_split_path_info ^(.+.php)(/.+)$;
+    fastcgi_pass php:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_intercept_errors off;
+    fastcgi_buffer_size 16k;
+    fastcgi_buffers 4 16k;
+  }
+
+   location ~ /.ht {
+    deny all;
+   }
+}
+</code></pre>
+<p>Guardamos el archivo y ahora creamos el <code>Dockerfile</code> dentro del directorio <code>nginx</code></p>
+<pre><code class="language-sh">nano /home/usuario/practica6-2/nginx/Dockerfile
+</code></pre>
+<p><img alt="Captura 9" src="../images/Practica6.2/9.png" /></p>
+<p>Y dentro de este archivo:</p>
+<p><img alt="Captura 10" src="../images/Practica6.2/10.png" /></p>
+<p>Y ahora editamos nuestro archivo <code>docker-compose.yml</code>:</p>
+<p><img alt="Captura 11" src="../images/Practica6.2/11.png" /></p>
+<p>Así pues, ejecutaremos el nuevo contenedor volviendo a ejecutar compose. Se debe ejecutar el comando en el mismo directorio donde tengamos nuestro archivo <code>docker-compose.yml</code>:</p>
+<pre><code class="language-sh">cd /home/usuario/practica6-2
+docker-compose up -d
+</code></pre>
+<p><img alt="Captura 12" src="../images/Practica6.2/12.png" /></p>
+<p>Y comprobamos que los contenedores están corriendo:</p>
+<pre><code class="language-sh">docker ps
+</code></pre>
+<p>Se debe de ver algo similar a esto:</p>
+<pre><code>CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                               NAMES
+82c8baf15221   docker-project_nginx   &quot;/docker-entrypoint.…&quot;   23 seconds ago   Up 22 seconds   0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp   nginx-container
+10778c6686d8   php:7.0-fpm            &quot;docker-php-entrypoi…&quot;   25 seconds ago   Up 23 seconds   9000/tcp                            php-container
+</code></pre>
+<p><img alt="Captura 13" src="../images/Practica6.2/13.png" /></p>
+<p>Y si ahora volvemos a acceder a la ip de la maquina virtual desde el navegador, veremos la página Hola mundo.</p>
+<p><img alt="Captura 14" src="../images/Practica6.2/14.png" /></p>
+<h3 id="4-creacion-de-un-contenedor-para-datos">4. Creación de un contenedor para datos</h3>
+<p>En este paso crearemos un contenedor independiente que se encargará de contener los datos y lo enlazaremos con el resto de contenedores.</p>
+<p>Para hacer esto, volvemos a editar el <code>docker-compose.yml</code>:</p>
+<pre><code class="language-sh">nano /usuario/home/practica6-2/docker-compose.yml
+</code></pre>
+<p>Y añadiremos un nuevo servicio a los que ya teníamos, quedando así:</p>
+<p><img alt="Captura 15" src="../images/Practica6.2/15.png" /></p>
+<p>Así que para recrear y lanzar todos los contenedores ejecutamos de nuevo dentro del directorio donde se encuentra el archivo:</p>
+<pre><code class="language-sh">docker-compose up -d
+</code></pre>
+<p>Y volvemos a verificar que están corriendo todos:</p>
+<pre><code class="language-sh">docker ps -a
+</code></pre>
+<p>Debiendo ver algo como:</p>
+<pre><code>CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS                      PORTS                               NAMES
+849315c7ffc0   docker-project_nginx   &quot;/docker-entrypoint.…&quot;   27 seconds ago   Up 25 seconds               0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp   nginx-container
+59a0d7040fd8   php:7.0-fpm            &quot;docker-php-entrypoi…&quot;   28 seconds ago   Up 27 seconds               9000/tcp                            php-container
+fbca95944234   php:7.0-fpm            &quot;docker-php-entrypoi…&quot;   29 seconds ago   Exited (0) 28 seconds ago                                       app-data-container
+</code></pre>
+<p><img alt="Captura 16" src="../images/Practica6.2/16.png" /></p>
+<h3 id="5-creacion-de-un-contenedor-mysql">5. Creación de un contenedor MySQL</h3>
+<p>En esta sección crearemos un contenedor de una base de datos MySQL y lo enlazaremos con el resto de contenedores.</p>
+<p>Primero, modificaremos la imagen PHP e instalaremos la extensión PHP para MySQL</p>
+<p>Creamos, si no lo teníamos ya, nuestro directorio <code>php</code> y dentro de él, el archivo <code>Dockerfile</code>:</p>
+<pre><code class="language-sh">mkdir /home/usuario/practica6-2/php
+nano /home/usuario/practica6-2/php/Dockerfile
+</code></pre>
+<p><img alt="Captura 17" src="../images/Practica6.2/17.png" /></p>
+<p>Y dentro del <code>Dockerfile</code> ponemos:</p>
+<p><img alt="Captura 18" src="../images/Practica6.2/18.png" /></p>
+<p>Y una vez más, debemos editar <code>docker-compose.yml</code> con el objetivo de que se creen el contenedor para MySQL y el contenedor de los datos de MySQL que contendrá la base de datos y las tablas:</p>
+<p><img alt="Captura 19" src="../images/Practica6.2/19.png" /></p>
+<p>Después de guardar este archivo, editamos el archivo <code>index.php</code> y hacemos algunos cambios para comprobar la conexión a la base de datos.</p>
+<p>El archivo <code>index.php</code> debe quedar así:</p>
+<p><img alt="Captura 20" src="../images/Practica6.2/20.png" /></p>
+<p>Se Guarda el archivo y se lanzan los contenedores una vez más:</p>
+<pre><code class="language-sh">docker-compose up -d
+</code></pre>
+<p><img alt="Captura 21" src="../images/Practica6.2/21.png" /></p>
+<p>Y verificamos que están ejecutándose:</p>
+<pre><code class="language-sh">docker ps -a
+</code></pre>
+<p>Y veremos:</p>
+<pre><code>CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS                      PORTS                               NAMES
+d3e82747fe0d   mysql:5.7              &quot;docker-entrypoint.s…&quot;   39 seconds ago   Up 38 seconds               3306/tcp, 33060/tcp                 mysql-container
+606320e5a7f8   mysql:5.7              &quot;docker-entrypoint.s…&quot;   41 seconds ago   Exited (0) 39 seconds ago                                       mysql-data-container
+ca4f63797d11   docker-project_php     &quot;docker-php-entrypoi…&quot;   2 hours ago      Up 2 hours                  9000/tcp                            php-container
+849315c7ffc0   docker-project_nginx   &quot;/docker-entrypoint.…&quot;   2 hours ago      Up 2 hours                  0.0.0.0:80-&gt;80/tcp, :::80-&gt;80/tcp   nginx-container
+fbca95944234   php:7.0-fpm            &quot;docker-php-entrypoi…&quot;   2 hours ago      Exited (0) 39 seconds ago                                       app-data-container
+</code></pre>
+<p><img alt="Captura 22" src="../images/Practica6.2/22.png" /></p>
+<h3 id="6-verificacion-de-conexion-a-la-base-de-datos">6. Verificación de conexión a la base de datos</h3>
+<p>Si ahora accedemos a la ip de la maquina virtual desde el navegador como hemos hecho antes, deberíamos obtener la siguiente pantalla:</p>
+<p><img alt="Captura 23" src="../images/Practica6.2/23.png" /></p>
+<p>nos dice que no tenemos ninguna tabla en la base de datos <code>mydb</code>.</p>
+<p>Eso es debido a que tenemos que cambiar la variable $root y la variable $password del index.php</p>
+<p>Es decir:</p>
+<pre><code class="language-sh">nano /home/usuario/www/html/index.php
+</code></pre>
+<p>Y cambiar las líneas:</p>
+<pre><code class="language-php">$user = &quot;root&quot;;
+$password = &quot;secret&quot;;
+</code></pre>
+<p><img alt="Captura 24" src="../images/Practica6.2/24.png" /></p>
+<p>Una vez hecho esto nos dara este resultado:</p>
+<p><img alt="Captura 25" src="../images/Practica6.2/25.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

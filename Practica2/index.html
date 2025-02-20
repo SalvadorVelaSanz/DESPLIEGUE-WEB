@@ -1,0 +1,1223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://SalvadorVelaSanz.github.io/Practica2/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Practica3/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Practica2.2 - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-22" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practica2.2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practica2.2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paquetes-necesarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paquetes necesarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-usuarios-y-contrasenas-para-el-acceso-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de usuarios y contraseñas para el acceso web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-el-servidor-nginx-para-usar-autenticacion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando el servidor Nginx para usar autenticación básica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probando-la-nueva-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROBANDO LA NUEVA CONFIGURACION
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PROBANDO LA NUEVA CONFIGURACION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-del-log-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registro del log de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinacion-de-la-autenticacion-basica-con-la-restriccion-de-acceso-por-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinación de la autenticación básica con la restricción de acceso por IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combinación de la autenticación básica con la restricción de acceso por IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-permitir-o-denegar-acceso-sobre-una-ip-concreta-directivas-allow-y-deny-respectivamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo permitir o denegar acceso sobre una IP concreta (directivas allow y deny, respectivamente).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinar-la-restriccion-ip-y-la-autenticacion-http-con-la-directiva-satisfy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinar la restricción IP y la autenticación HTTP con la directiva satisfy.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tareas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tareas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarea-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarea 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarea 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuestiones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestiones finales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cuestiones finales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solucion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solucion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PracticaAmpliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PracticaAmpliacion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paquetes-necesarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paquetes necesarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-usuarios-y-contrasenas-para-el-acceso-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de usuarios y contraseñas para el acceso web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-el-servidor-nginx-para-usar-autenticacion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando el servidor Nginx para usar autenticación básica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probando-la-nueva-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROBANDO LA NUEVA CONFIGURACION
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PROBANDO LA NUEVA CONFIGURACION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobacion-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-del-log-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registro del log de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinacion-de-la-autenticacion-basica-con-la-restriccion-de-acceso-por-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinación de la autenticación básica con la restricción de acceso por IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combinación de la autenticación básica con la restricción de acceso por IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-permitir-o-denegar-acceso-sobre-una-ip-concreta-directivas-allow-y-deny-respectivamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo permitir o denegar acceso sobre una IP concreta (directivas allow y deny, respectivamente).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinar-la-restriccion-ip-y-la-autenticacion-http-con-la-directiva-satisfy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinar la restricción IP y la autenticación HTTP con la directiva satisfy.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tareas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tareas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarea-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarea 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarea 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuestiones-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestiones finales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cuestiones finales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solucion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuestion-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestión 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucion_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solucion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-22">PRACTICA 2.2</h1>
+<h2 id="paquetes-necesarios">Paquetes necesarios</h2>
+<p>Para esta práctica podemos utilizar la herramienta openssl para crear las contraseñas.</p>
+<p>En primer lugar debemos comprobar si el paquete está instalado:</p>
+<pre><code class="language-bash">dpkg -l | grep openssl
+
+</code></pre>
+<p>Y si no lo estuviera, instalarlo con el siguiente comando:</p>
+<pre><code class="language-bash">sudo apt update sudo apt install openssl
+</code></pre>
+<p><img alt="Captura 1" src="../images/Practica2.2/1.png" /></p>
+<h2 id="creacion-de-usuarios-y-contrasenas-para-el-acceso-web">Creación de usuarios y contraseñas para el acceso web</h2>
+<p>Crearemos un archivo oculto llamado “.htpasswd” en el directorio de configuración <code>/etc/nginx</code> donde guardar nuestros usuarios y contraseñas (la <code>-c</code> es para crear el archivo):</p>
+<pre><code class="language-bash">sudo sh -c &quot;echo -n 'vuestro_nombre:' &gt;&gt; /etc/nginx/.htpasswd&quot;
+</code></pre>
+<p><img alt="Captura 2" src="../images/Practica2.2/2.png" /></p>
+<p>Ahora crearemos un password cifrado para el usuario:</p>
+<pre><code class="language-bash">sudo sh -c &quot;openssl passwd -apr1 &gt;&gt; /etc/nginx/.htpasswd&quot;
+</code></pre>
+<p><img alt="Captura 3" src="../images/Practica2.2/3.png" /></p>
+<p>Este proceso se podrá repetir para tantos usuarios como haga falta.</p>
+<p>Crea dos usuarios, uno con tu nombre y otro con tu primer apellido.<br />
+Comprueba que el usuario y la contraseña aparecen cifrados en el fichero:</p>
+<p><code>cat /etc/nginx/.htpasswd</code></p>
+<p><img alt="Captura 4" src="../images/Practica2.2/4.png" /></p>
+<h2 id="configurando-el-servidor-nginx-para-usar-autenticacion-basica">Configurando el servidor Nginx para usar autenticación básica</h2>
+<p>Editaremos la configuración del <strong>server block</strong> sobre el cual queremos aplicar la restricción de acceso. Utilizaremos para esta autenticación el sitio web de la práctica anterior:</p>
+<p><img alt="Captura 5" src="../images/Practica2.2/5.png" /></p>
+<p><code>sudo nano /etc/nginx/sites-available/nombre_web</code></p>
+<p><img alt="Captura 6" src="../images/Practica2.2/6.png" /></p>
+<p><img alt="Captura 7" src="../images/Practica2.2/7.png" /></p>
+<p>Debemos decidir qué recursos estarán protegidos. Nginx permite añadir restricciones a nivel de servidor o en un <code>location</code> (directorio o archivo) específico. Para nuestro ejemplo, vamos a proteger el <strong>document root</strong> (la raíz, la página principal) de nuestro sitio.</p>
+<p>Utilizaremos la directiva <code>auth_basic</code> dentro del <code>location</code> y le pondremos el nombre a nuestro dominio que será mostrado al usuario al solicitar las credenciales. Por último, configuramos Nginx para que utilice el fichero que previamente hemos creado con la directiva <code>auth_basic_user_file</code>:</p>
+<p><img alt="Captura 8" src="../images/Practica2.2/8.png" /></p>
+<p>Una vez terminada la configuración, reiniciamos el servicio para que aplique nuestra política de acceso:</p>
+<p><code>sudo systemctl restart nginx</code></p>
+<p><img alt="Captura 9" src="../images/Practica2.2/9.png" /></p>
+<h2 id="probando-la-nueva-configuracion">PROBANDO LA NUEVA CONFIGURACION</h2>
+<h3 id="comprobacion-1">Comprobación 1</h3>
+<p>Comprueba desde tu máquina física/anfitrión que puedes acceder a <code>http://nombre-sitio-web</code> y que se te solicita autenticación.</p>
+<p><img alt="Captura 10" src="../images/Practica2.2/10.png" /></p>
+<h3 id="comprobacion-2">Comprobación 2</h3>
+<p>Comprueba que si decides cancelar la autenticación, se te negará el acceso al sitio con un error. ¿Qué error es?</p>
+<p><img alt="Captura 11" src="../images/Practica2.2/11.png" /></p>
+<h3 id="registro-del-log-de-error">Registro del log de error</h3>
+<p><img alt="Captura 12" src="../images/Practica2.2/12.png" /></p>
+<p>Cuando hemos configurado el siguiente bloque:</p>
+<pre><code class="language-bash">location / { auth_basic &quot;Área restringida&quot;; auth_basic_user_file /etc/nginx/.htpasswd; try_files $uri $uri/ =404; }
+</code></pre>
+<p>La autenticación se aplica al directorio/archivo que le indicamos en la declaración del <code>location</code> y que en este caso es la raíz <code>/</code>.</p>
+<p>Así pues, esta restricción se aplica al directorio raíz o base donde residen los archivos del sitio web, que es:</p>
+<p><code>/var/www/webraul/html/simple-static-website</code></p>
+<p>Y a todos los archivos que hay dentro, ya que no hemos especificado ninguno en concreto.</p>
+<h2 id="combinacion-de-la-autenticacion-basica-con-la-restriccion-de-acceso-por-ip">Combinación de la autenticación básica con la restricción de acceso por IP</h2>
+<p>La autenticación básica HTTP puede ser combinada de forma efectiva con la restricción de acceso por dirección IP. Se pueden implementar dos escenarios:</p>
+<ul>
+<li>Un usuario debe cumplir ambas cosas: estar autenticado y tener una IP válida.</li>
+<li>Un usuario debe, o bien estar autenticado, o bien tener una IP válida.</li>
+</ul>
+<p>Veamos cómo lo haríamos:</p>
+<h3 id="como-permitir-o-denegar-acceso-sobre-una-ip-concreta-directivas-allow-y-deny-respectivamente">Cómo permitir o denegar acceso sobre una IP concreta (directivas <code>allow</code> y <code>deny</code>, respectivamente).</h3>
+<p>Dentro del <strong>server block</strong> o archivo de configuración del dominio web, que recordad está en el directorio <code>sites-available</code>:</p>
+<p>El acceso se garantizará a la IP <code>192.168.1.1/24</code>, excluyendo a la dirección <code>192.168.1.2</code>.</p>
+<p>Hay que tener en cuenta que las directivas <code>allow</code> y <code>deny</code> se irán aplicando en el orden en el que aparecen en el archivo.</p>
+<p>Aquí aplican sobre la <code>location /api</code> (esto es sólo un ejemplo de un hipotético directorio o archivo), pero podrían aplicar sobre cualquiera, incluida todo el sitio web, la <code>location</code> raíz <code>/</code>.</p>
+<p>La última directiva <code>deny all</code> quiere decir que, por defecto, denegaremos el acceso a todo el mundo. Por eso hay que poner los <code>allow</code> y <code>deny</code> más específicos justo antes de esta, porque al evaluarse en orden de aparición, si los pusiéramos debajo se denegaría el acceso a todo el mundo, puesto que <code>deny all</code> sería lo primero que se evaluaría.</p>
+<h3 id="combinar-la-restriccion-ip-y-la-autenticacion-http-con-la-directiva-satisfy">Combinar la restricción IP y la autenticación HTTP con la directiva <code>satisfy</code>.</h3>
+<p>Si establecemos el valor de la directiva a <code>all</code>, el acceso se permite si el cliente satisface ambas condiciones (IP y usuario válido). Si lo establecemos a <code>any</code>, el acceso se permite si se satisface al menos una de las dos condiciones.</p>
+<h2 id="tareas">Tareas</h2>
+<h3 id="tarea-1">Tarea 1</h3>
+<p>Configura Nginx para que no deje acceder con la IP de la máquina anfitriona al directorio raíz de una de tus dos webs. Modifica su <strong>server block</strong> o archivo de configuración. Comprueba cómo se deniega el acceso:</p>
+<p>Para hacer esto nos deberemos ir al archivo <code>etc/nginx/sites-available/servidor1</code> y añadir la siguiente línea en <code>location /</code>:</p>
+<p><img alt="Captura 13" src="../images/Practica2.2/13.png" /></p>
+<p>Una vez terminado reiniciamos el servidor nginx con el comando:</p>
+<p><code>sudo systemctl restart nginx</code></p>
+<p>Muestra la página de error en el navegador.</p>
+<p><img alt="Captura 14" src="../images/Practica2.2/14.png" /></p>
+<p>Muestra el mensaje de error de <code>error.log</code>.</p>
+<p><img alt="Captura 15" src="../images/Practica2.2/15.png" /></p>
+<h3 id="tarea-2">Tarea 2</h3>
+<p>Configura Nginx para que desde tu máquina anfitriona se tenga que tener tanto una IP válida como un usuario válido, ambas cosas a la vez, y comprueba que sí puedes acceder sin problemas.</p>
+<p>Para hacer esto se debe de tener un usuario web con su contraseña ya definido. Como ya lo tenemos, solo tenemos que poner esto en el archivo <code>etc/nginx/sites-available/servidor1</code>:</p>
+<p><img alt="Captura 16" src="../images/Practica2.2/16.png" /></p>
+<p>y reiniciar el servidor con:</p>
+<p><code>sudo systemctl restart nginx</code></p>
+<p><img alt="Captura 17" src="../images/Practica2.2/17.png" /></p>
+<p>L<img alt="Captura 18" src="../images/Practica2.2/18.png" /></p>
+<p>Y este es el registro de <code>access.log</code>:</p>
+<p><img alt="Captura 19" src="../images/Practica2.2/19.png" /></p>
+<h2 id="cuestiones-finales">Cuestiones finales</h2>
+<h3 id="cuestion-1">Cuestión 1</h3>
+<p>Supongamos que yo soy el cliente con la IP <code>172.1.10.15</code> e intento acceder al directorio <code>web_muy_guay</code> de mi sitio web, equivocándome al poner el usuario y contraseña. ¿Podré acceder? ¿Por qué?</p>
+<pre><code class="language-bash">location /web_muy_guay { satisfy all;
+deny 172.1.10.6; allow 172.1.10.15; allow 172.1.3.14; deny all; auth_basic &quot;Cuestión final 1&quot;; auth_basic_user_file conf/htpasswd; }
+</code></pre>
+<h3 id="solucion">Solución</h3>
+<p>Debido a que la directiva <code>satisfy all</code> exige que ambas condiciones (IP válida y autenticación básica correcta) se cumplan para permitir el acceso, no podrás acceder al directorio si te equivocas en la autenticación básica, incluso si tu IP es permitida.</p>
+<h3 id="cuestion-2">Cuestión 2</h3>
+<p>Supongamos que yo soy el cliente con la IP <code>172.1.10.15</code> e intento acceder al directorio <code>web_muy_guay</code> de mi sitio web, introduciendo correctamente usuario y contraseña. ¿Podré acceder? ¿Por qué?</p>
+<pre><code class="language-bash">location /web_muy_guay { satisfy all;
+deny all; deny 172.1.10.6; allow 172.1.10.15; allow 172.1.3.14; auth_basic &quot;Cuestión final 2: The revenge&quot;; auth_basic_user_file conf/htpasswd; }
+</code></pre>
+<h3 id="solucion_1">Solución</h3>
+<p>Debido a que la directiva <code>satisfy all</code> exige que ambas condiciones (IP válida y autenticación básica correcta) se cumplan para permitir el acceso, ya que has ingresado bien el usuario y la contraseña y la IP está permitida, se podrá acceder sin problemas.</p>
+<h3 id="cuestion-3">Cuestión 3</h3>
+<p>Supongamos que yo soy el cliente con lP 172.1.10.15 e intento acceder al directorio <code>web_muy_guay</code> de mi sitio web, introduciendo correctamente usuario y contraseña. ¿Podré acceder?¿Por qué?</p>
+<pre><code class="language-bash">    location /web_muy_guay {
+    #...
+    satisfy any;    
+    deny  172.1.10.6;
+    deny 172.1.10.15;
+    allow 172.1.3.14;
+
+    auth_basic &quot;Cuestión final 3: The final combat&quot;;
+    auth_basic_user_file conf/htpasswd;
+}
+</code></pre>
+<h3 id="solucion_2">Solucion</h3>
+<p>No podrás acceder al directorio web_muy_guay porque, aunque la autenticación es correcta, la IP 172.1.10.15 está explícitamente denegada.</p>
+<h3 id="cuestion-4">Cuestión 4</h3>
+<p>A lo mejor no sabéis que tengo una web para documentar todas mis excursiones espaciales con Jeff, es esta: Jeff Bezos y yo</p>
+<p>Supongamos que quiero restringir el acceso al directorio de proyectos porque es muy secreto, eso quiere decir añadir autenticación básica a la URL:Proyectos</p>
+<p>Completa la configuración para conseguirlo:</p>
+<pre><code class="language-bash">    server {
+        listen 80;
+        listen [::]:80;
+        root /var/www/freewebsitetemplates.com/preview/space-science;
+        index index.html index.htm index.nginx-debian.html;
+        server_name freewebsitetemplates.com www.freewebsitetemplates.com;
+        location              {
+
+            try_files $uri $uri/ =404;
+        }
+    }
+</code></pre>
+<h3 id="solucion_3">Solucion</h3>
+<p>La configuracion actualizada sería :</p>
+<pre><code class="language-bash">server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/freewebsitetemplates.com/preview/space-science;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name freewebsitetemplates.com www.freewebsitetemplates.com;
+
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+
+    location /Proyectos {
+        auth_basic &quot;Acceso restringido a Proyectos&quot;;  
+        auth_basic_user_file /etc/nginx/.htpasswd;  
+
+        try_files $uri $uri/ =404;  
+    }
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

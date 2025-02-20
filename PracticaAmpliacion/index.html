@@ -1,0 +1,871 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://SalvadorVelaSanz.github.io/PracticaAmpliacion/">
+      
+      
+        <link rel="prev" href="../Practica8/">
+      
+      
+        <link rel="next" href="../Practica9/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>PracticaAmpliacion - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalacion-de-nginx" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PracticaAmpliacion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    PracticaAmpliacion
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    PracticaAmpliacion
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Nginx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Usuarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-directorios-public_html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Directorios public_html
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-contenido-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del Contenido Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Nginx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-archivo-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del Archivo hosts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración HTTPS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practica13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica6.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Nginx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Usuarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-directorios-public_html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Directorios public_html
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-contenido-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del Contenido Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Nginx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-archivo-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del Archivo hosts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración HTTPS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>PracticaAmpliacion</h1>
+
+<p>El objetivo de esta práctica es configurar un servidor Nginx que utilice hosts virtuales para alojar múltiples sitios web en un solo servidor y que cada host virtual apunte al directorio <code>public_html</code> de distintos usuarios del sistema operativo Debian. De esta manera, cada usuario podrá gestionar su propio sitio web desde su carpeta personal.</p>
+<h2 id="instalacion-de-nginx">Instalación de Nginx</h2>
+<p>Para poder hacer esto necesitamos instalar Nginx. Si no está instalado, los pasos para hacerlo son:</p>
+<ol>
+<li>
+<p>Actualizamos el sistema con este comando:
+    <code>bash
+    sudo apt update &amp;&amp; sudo apt upgrade -y</code></p>
+</li>
+<li>
+<p>Instalamos Nginx con este comando:
+    <code>bash
+    sudo apt install nginx -y</code></p>
+</li>
+<li>
+<p>Verificamos si está activo con este comando:
+    <code>bash
+    sudo systemctl status nginx</code></p>
+<p>Debería de salir esto si está funcionando:</p>
+</li>
+</ol>
+<p><img alt="Captura 1" src="../images/PracticaAmpliacion/1.png" /></p>
+<ol>
+<li>Si no está activo, lo activamos con este comando:
+    <code>bash
+    sudo systemctl start nginx</code></li>
+</ol>
+<p>Una vez hecho esto, Nginx debería estar funcionando correctamente, por lo que ya podremos empezar con la creación de los usuarios.</p>
+<h2 id="creacion-de-usuarios">Creación de Usuarios</h2>
+<p>Para la creación de los usuarios, en este caso dos de ellos, tendremos que usar los siguientes comandos:</p>
+<pre><code class="language-bash">sudo adduser usuario1
+sudo adduser usuario2
+</code></pre>
+<p>Una vez que hagamos esto, nos pedirá que le asociemos una contraseña a cada usuario nuevo que creemos. Además de la contraseña, también se le asociarán más datos que para esta práctica se pueden dejar en blanco, como número de teléfono...</p>
+<p><img alt="Captura 2" src="../images/PracticaAmpliacion/2.png" /></p>
+<h2 id="creacion-de-directorios-public_html">Creación de Directorios <code>public_html</code></h2>
+<p>Después de esto, procedemos a crear las carpetas <code>public_html</code> en cada usuario. Para esto usaremos estos comandos:</p>
+<pre><code class="language-bash">sudo mkdir /home/usuario1/public_html
+sudo mkdir /home/usuario2/public_html
+</code></pre>
+<p><img alt="Captura 3" src="../images/PracticaAmpliacion/3.png" /></p>
+<p>Una vez hecho esto, le damos los permisos correspondientes. Para hacer esto usamos estos comandos:</p>
+<pre><code class="language-bash">sudo chmod 755 /home/usuario1/public_html
+sudo chmod 755 /home/usuario2/public_html
+</code></pre>
+<p>Después, le cambiamos la propiedad de los directorios a sus respectivos usuarios con estos comandos:</p>
+<pre><code class="language-bash">sudo chown -R www-data:www-data /home/usuario1/public_html
+sudo chown -R www-data:www-data /home/usuario2/public_html
+</code></pre>
+<p><img alt="Captura 4" src="../images/PracticaAmpliacion/4.png" /></p>
+<h2 id="creacion-del-contenido-web">Creación del Contenido Web</h2>
+<p>Ahora que ya hemos dado los permisos, ya podemos empezar con la creación del contenido web.</p>
+<p>Para esto necesitamos crear en cada carpeta <code>public_html</code> de cada usuario un archivo <code>index.html</code> con un contenido para que se muestre.</p>
+<p>Podemos usar este como ejemplo para el usuario1:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+     &lt;title&gt;Usuario 1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;h1&gt;Bienvenido al sitio de Usuario 1&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Para el usuario2 podemos usar el mismo pero cambiándole el 1 por el 2.</p>
+<p>Para hacer esto, crearemos los <code>index.html</code> y le añadiremos el contenido de ejemplo con:</p>
+<pre><code class="language-bash">sudo nano /home/usuario1/public_html/index.html
+sudo nano /home/usuario2/public_html/index.html
+</code></pre>
+<p>y le introducimos el HTML.</p>
+<p><img alt="Captura 5" src="../images/PracticaAmpliacion/5.png" /></p>
+<p><img alt="Captura 6" src="../images/PracticaAmpliacion/6.png" /></p>
+<h2 id="configuracion-de-nginx">Configuración de Nginx</h2>
+<p>Una vez tenemos esto, ya podemos empezar con la configuración de Nginx.</p>
+<p>Para empezar, nos vamos a dirigir a <code>/etc/nginx/sites-available/</code> y crearemos los archivos de configuración para cada usuario.</p>
+<p>Como tenemos que hacer uno para cada usuario, voy a llamarlos <code>usuario1conf</code> y <code>usuario2conf</code>.</p>
+<p>Estos los crearemos usando <code>nano</code>, su contenido será este:</p>
+<pre><code class="language-nginx">server {
+     listen 80;
+     server_name usuario1.local;
+
+     root /home/usuario1/public_html;
+     index index.html;
+
+     location / {
+          try_files $uri $uri/ =404;
+     }
+}
+</code></pre>
+<p>En el se indica el puerto y la ruta que se deberá de cambiar para el usuario 2.</p>
+<p><img alt="Captura 7" src="../images/PracticaAmpliacion/7.png" /></p>
+<p><img alt="Captura 8" src="../images/PracticaAmpliacion/8.png" /></p>
+<p>Ahora necesitamos habilitar los sitios web. Para ello necesitamos crear un enlace simbólico para cada uno en <code>/etc/nginx/sites-enabled/</code>.</p>
+<p>Los crearemos con estos comandos:</p>
+<pre><code class="language-bash">sudo ln -s /etc/nginx/sites-available/usuario1conf /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/usuario2conf /etc/nginx/sites-enabled/
+</code></pre>
+<p>Una vez hecho esto, al meternos en <code>sites-enabled</code> debería verse así:</p>
+<p><img alt="Captura 9" src="../images/PracticaAmpliacion/9.png" /></p>
+<p>Debe salir del mismo color que se muestra en la foto. Si no aparece de la misma forma, es porque ha habido algún error.</p>
+<p>Una vez hecho esto, ponemos el siguiente comando para ver si tenemos algún error:</p>
+<pre><code class="language-bash">sudo nginx -t
+</code></pre>
+<p>Y si todo sale bien, ponemos:</p>
+<pre><code class="language-bash">sudo systemctl reload nginx
+</code></pre>
+<p>para reiniciar Nginx.</p>
+<p><img alt="Captura 10" src="../images/PracticaAmpliacion/10.png" /></p>
+<h2 id="configuracion-del-archivo-hosts">Configuración del Archivo <code>hosts</code></h2>
+<p>Una vez hecho esto, tenemos que abrir el archivo <code>hosts</code> de nuestra máquina física y poner lo siguiente:</p>
+<p><img alt="Captura 11" src="../images/PracticaAmpliacion/11.png" /></p>
+<p>Para que funcione, deberéis de poner la IP de vuestra máquina virtual y el nombre del dominio que habéis puesto en los archivos de configuración:</p>
+<pre><code>http://usuario1.local
+http://usuario2.local
+</code></pre>
+<p>Una vez hecho esto, al acceder a las URL debería de aparecer el contenido de los HTML de prueba que metimos en el directorio de <code>public_html</code>.</p>
+<p><img alt="Captura 12" src="../images/PracticaAmpliacion/12.png" /></p>
+<h2 id="configuracion-https">Configuración HTTPS</h2>
+<p>Ahora, para terminar, lo que necesitamos es añadir la configuración HTTPS. Para ello, primero debemos generar los certificados SSL autofirmados para cada dominio:</p>
+<pre><code class="language-bash">sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/usuario1.key -out /etc/ssl/certs/usuario1.crt
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/usuario2.key -out /etc/ssl/certs/usuario2.crt
+</code></pre>
+<p><img alt="Captura 13" src="../images/PracticaAmpliacion/13.png" /></p>
+<p>El siguiente paso es modificar los archivos de configuración para que incluya el HTTPS.</p>
+<p><img alt="Captura 14" src="../images/PracticaAmpliacion/14.png" /></p>
+<p>Después de modificar los archivos, volvemos a reiniciar Nginx con:</p>
+<pre><code class="language-bash">sudo systemctl reload nginx
+</code></pre>
+<p>y ya debería de aparecer el certificado.</p>
+<p><img alt="Captura 15" src="../images/PracticaAmpliacion/15.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
